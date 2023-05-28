@@ -26,6 +26,7 @@ public class ZombieFactory {
 			return null;
 		}
 		// TODO add your code here
+		return null;
 	}
 
 	public static List<Zombie> getAvailableZombies() {

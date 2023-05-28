@@ -22,10 +22,12 @@ public class SunsManager {
 	}
 
 	public int getCatchedSuns() {
+		return cooldown;
 		// TODO add your code here
 	}
 
 	public int getGeneratedSuns() {
+		return cooldown;
 		// TODO add your code here
 	}
 

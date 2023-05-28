@@ -39,7 +39,7 @@ public abstract class GameObject implements GameItem {
 		return row;
 	}
 	
-	public abstract boolean isAlive()
+	public abstract boolean isAlive();
 
 	public String toString() {
 		if (isAlive()) {
@@ -47,6 +47,7 @@ public abstract class GameObject implements GameItem {
 		} else {
 			return "";
 		}
+		return null;
 	}
 
 	abstract protected String getSymbol();

@@ -71,6 +71,16 @@ public class ZombiesManager {
 		return canAdd;
 	}
 
+	private boolean isPositionEmpty(int numCols, int row) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private int getRemainingZombies() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	// TODO add your code here
 
 }

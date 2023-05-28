@@ -32,6 +32,7 @@ public class ListZombiesCommand extends Command {
 	@Override
 	public ExecutionResult execute(GameWorld game) {
 		// TODO add your code here
+		return null;
 	}
 
 }

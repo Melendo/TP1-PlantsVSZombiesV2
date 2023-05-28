@@ -115,6 +115,75 @@ public class Game implements GameStatus, GameWorld {
 		return this.container.isFullyOccupied(col, row);
 	}
 
+	public boolean isPlayerQuits() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void addSun() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean tryToCatchObject(int col, int row) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addItem(GameObject gameObject) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int getCycle() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getSuncoins() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getRemainingZombies() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String positionToString(int col, int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getGeneratedSuns() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getCaughtSuns() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean execute(Command command) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	// TODO add your code here
 
 }

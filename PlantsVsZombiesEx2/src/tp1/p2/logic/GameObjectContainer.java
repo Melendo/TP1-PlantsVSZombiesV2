@@ -38,6 +38,7 @@ public class GameObjectContainer {
 	}
 
 	public boolean removeDead() {
+		return false;
 		// TODO add your code here
 	}
 
