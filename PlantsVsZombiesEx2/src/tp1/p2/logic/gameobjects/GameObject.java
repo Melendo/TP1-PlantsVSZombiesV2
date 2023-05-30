@@ -41,7 +41,32 @@ public abstract class GameObject implements GameItem {
 		return row;
 	}
 	
-	public abstract boolean isAlive();
+	public int getHp() {
+		return hp;
+	}
+	
+	public void setCol(int col) {
+		this.col = col;
+	}
+	
+	public void setRow(int row) {
+		this.row = row;
+	}
+	
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
+	public void damage(int i) {
+		hp -= i;
+	}
+	
+	public boolean isAlive() {
+		if(this.hp > 0) {
+			return true;
+		}
+		return false;
+	}
 
 	public String toString() {
 		if (isAlive()) {

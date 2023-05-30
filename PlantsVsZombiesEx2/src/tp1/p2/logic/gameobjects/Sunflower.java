@@ -1,6 +1,7 @@
 package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.Game;
+import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
 public class Sunflower extends Plant {
@@ -11,25 +12,18 @@ public class Sunflower extends Plant {
 	public static final int GEN_SUNS = 10;
 	public static final int GEN_CCL = 3;
 	
-
 	private int shouldGenerate ;
-	private int col;
-	private int row;
-	private int hp;
-	private Game game;
 	
-	public Sunflower(int col, int row){
-		this.col = col;
-		this.row = row;
-		this.hp = HP;
-		this.shouldGenerate = -1;
+	public Sunflower(GameWorld game, int col, int row){
+		super(game, col, row);
 	}
 	
 	public Sunflower() {
-		
+		this.name = getName();
+		this.hp = HP;
 	}
 	
-	public static String getDescription() {
+	public String getDescription1() {
 		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
 		return str ;
 	}
@@ -44,37 +38,58 @@ public class Sunflower extends Plant {
 		}
 		return false;
 	}
-	
-	
-	//Getters
-	
-		public int getCol() {
-			return this.col;
+
+		@Override
+		public boolean receiveZombieAttack(int damage) {
+			// TODO Auto-generated method stub
+			return false;
 		}
-		
-		public int getRow() {
-			return this.row;
+
+		@Override
+		public boolean receivePlantAttack(int damage) {
+			// TODO Auto-generated method stub
+			return false;
 		}
-		
-		public int getHp() {
-			return this.hp;
+
+		@Override
+		public boolean fillPosition() {
+			// TODO Auto-generated method stub
+			return false;
 		}
-		
-		//Setters
-		
-		public void setCol(int col) {
-			this.col = col;
+
+		@Override
+		public boolean catchObject() {
+			// TODO Auto-generated method stub
+			return false;
 		}
-		
-		public void setRow(int row) {
-			this.row = row;
+
+		@Override
+		public Plant create (GameWorld game, int col, int row) {
+			// TODO Auto-generated method stub
+			return new Sunflower(game, col, row);
 		}
-		
-		public void setHp(int hp) {
-			this.hp = hp;
+
+		@Override
+		public String getDescription() {
+			// TODO Auto-generated method stub
+			return null;
 		}
-		
-		public boolean isAlive() {
-		return (this.hp > 0);
+
+		@Override
+		public void update() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onEnter() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onExit() {
+			// TODO Auto-generated method stub
+			
 		}
 }

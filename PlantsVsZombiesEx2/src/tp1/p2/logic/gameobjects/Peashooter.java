@@ -29,34 +29,6 @@ public class Peashooter extends Plant {
 	public boolean isAlive() {
 		return (this.hp > 0);
 		}
-	
-	//Getters
-	
-	public int getCol() {
-		return this.col;
-	}
-	
-	public int getRow() {
-		return this.row;
-	}
-	
-	public int getHp() {
-		return this.hp;
-	}
-		
-	//Setters
-	
-	public void setCol(int col) {
-		this.col = col;
-	}
-	
-	public void setRow(int row) {
-		this.row = row;
-	}
-	
-	public void setHp(int hp) {
-		this.hp = hp;
-	}
 
 	@Override
 	public Plant create(GameWorld game, int col, int row) {
