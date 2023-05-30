@@ -20,12 +20,21 @@ public class PlantFactory {
 	public static boolean isValidPlant(String plantName) {
 		for (Plant p : AVAILABLE_PLANTS) {
 			// TODO add your code here
+			if(p.getName() == plantName || p.getSymbol() == plantName) {
+				return true;
+			}
 		}
 
 		return false;
 	}
 
 	public static Plant spawnPlant(String plantName, GameWorld game, int col, int row) {
+		for (Plant p : AVAILABLE_PLANTS) {
+			// TODO add your code here
+			if(p.getName() == plantName || p.getSymbol() == plantName) {
+				return p.create(game, col, row);
+			}
+		}
 		return null;
 		// TODO add your code here
 	}

@@ -12,10 +12,12 @@ import tp1.p2.logic.GameWorld;
 public abstract class GameObject implements GameItem {
 
 	protected GameWorld game;
-
 	protected int col;
-
 	protected int row;
+	protected String name;
+	protected String symbol;
+	protected int hp;
+	protected int cooldown;
 
 
 	GameObject() {
