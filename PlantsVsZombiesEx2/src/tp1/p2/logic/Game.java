@@ -15,6 +15,8 @@ import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.view.Messages;
 
 public class Game implements GameStatus, GameWorld {
+	
+	public static final int INITIAL_SUNCOINS = 50;
 
 	private long seed;
 
@@ -25,6 +27,19 @@ public class Game implements GameStatus, GameWorld {
 	private GameObjectContainer container;
 
 	private Deque<GameAction> actions;
+	
+	private Random random;
+	
+	private int suncoins;
+
+	private ZombiesManager zombiesManager;
+	
+	private SunsManager sunsManager;
+	
+	private boolean dead;
+	
+	private boolean quits;
+	
 
 	// TODO add your attributes here
 
@@ -52,8 +67,17 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public void reset(Level level, long seed) {
 		// TODO add your code here
+		
+		this.level = level;
+		this.seed = seed;
+		this.random = new Random(seed);
 		this.cycle = 0;
 		this.actions = new ArrayDeque<>();
+		quits = false;
+		suncoins = INITIAL_SUNCOINS;
+		zombiesManager = new ZombiesManager(this, level, random);
+		container = new GameObjectContainer();
+		sunsManager = new SunsManager(this, random);
 	}
 
 
