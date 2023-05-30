@@ -95,6 +95,7 @@ public class GamePrinter {
 	 *         finished.
 	 */
 	public String endMessage() {
+		return null;
 		// TODO add your code here
 	}
 }
