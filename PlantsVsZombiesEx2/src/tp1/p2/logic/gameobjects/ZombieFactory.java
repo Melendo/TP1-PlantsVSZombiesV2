@@ -10,10 +10,10 @@ public class ZombieFactory {
 
 	/* @formatter:off */
 	private static final List<Zombie> AVAILABLE_ZOMBIES = Arrays.asList(
-		new Zombie(),
-		new BucketHead(),
-		new Sporty(),
-		new ExplosiveZombie()
+		new Zombie()
+		//new BucketHead(),
+		//new Sporty(),
+		//new ExplosiveZombie()
 	);
 	/* @formatter:on */
 

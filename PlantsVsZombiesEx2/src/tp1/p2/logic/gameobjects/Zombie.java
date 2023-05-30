@@ -1,6 +1,28 @@
 package tp1.p2.logic.gameobjects;
 
+import tp1.p2.logic.Game;
+
 public class Zombie extends GameObject {
+	
+	public static final int HP = 5;
+	public static final int DMG = 1;
+	
+	private int col;
+	private int row;
+	private int hp;
+	private int shouldMove ;
+	private Game game;
+	
+	public Zombie(int row) {
+		this.row = row;
+		this.col = Game.NUM_COLS + 1;
+		this.hp = HP;
+		this.shouldMove = - 1;
+	}
+	
+	public Zombie() {
+		
+	}
 
 	@Override
 	public boolean receiveZombieAttack(int damage) {

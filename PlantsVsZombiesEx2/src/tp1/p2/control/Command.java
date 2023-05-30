@@ -44,12 +44,12 @@ public abstract class Command {
 
 	public static Command parse(String[] commandWords) {
 		if (commandWords.length == 1 && commandWords[0].isEmpty()) {
-			// TODO add your code here
+			return defaultCommand.create(commandWords);
 		}
 
 		for (Command command : AVAILABLE_COMMANDS) {
 			if (command.matchCommand(commandWords[0])) {
-				// TODO add your code here
+				return command.create(commandWords);
 			}
 		}
 		System.out.println(error(Messages.UNKNOWN_COMMAND));
