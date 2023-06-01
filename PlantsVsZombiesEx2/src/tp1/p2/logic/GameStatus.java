@@ -78,6 +78,8 @@ public interface GameStatus {
 	 *         otherwise.
 	 */
 	boolean isFullyOcuppied(int col, int row);
+	
+	void subtractSuncoins(int x);
 
 	// TODO add your code here
 

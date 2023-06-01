@@ -22,8 +22,8 @@ public class ZombieFactory {
 	}
 
 	public static Zombie spawnZombie(int zombieIdx, GameWorld game, int col, int row) {
-		if (!isValidZombie(zombieIdx)) {
-			return null;
+		if (isValidZombie(zombieIdx)) {
+			return AVAILABLE_ZOMBIES.get(zombieIdx).create(game, row);
 		}
 		// TODO add your code here
 		return null;

@@ -189,7 +189,7 @@ public class Game implements GameStatus, GameWorld {
         return sol;
 	}
 
-}
+
 
 	@Override
 	public int getGeneratedSuns() {
@@ -207,6 +207,14 @@ public class Game implements GameStatus, GameWorld {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void subtractSuncoins(int x) {
+		// TODO Auto-generated method stub
+		this.suncoins -= x;
+	}
+	
+	
 
 	// TODO add your code here
 

@@ -50,6 +50,12 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	public ExecutionResult execute(GameWorld game) {
+		if(PlantFactory.isValidPlant(plantName) && !game.isFullyOcuppied(col, row)) {
+			
+			game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
+		} else {
+			System.out.println("The plant selected doesnt exist or the position selected is occupied");
+		}
 		return null;
 		// TODO add your code here
 	}
