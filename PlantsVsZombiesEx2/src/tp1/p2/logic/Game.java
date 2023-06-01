@@ -169,27 +169,27 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public int getCycle() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.cycle;
 	}
 
 	@Override
 	public int getSuncoins() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.suncoins;
 	}
 
 	@Override
 	public int getRemainingZombies() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public String positionToString(int col, int row) {
-		// TODO Auto-generated method stub
-		return null;
+
+        String sol = " ";
+        return sol;
 	}
+
+}
 
 	@Override
 	public int getGeneratedSuns() {

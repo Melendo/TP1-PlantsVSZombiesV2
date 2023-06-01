@@ -36,7 +36,6 @@ public class PlantFactory {
 			}
 		}
 		return null;
-		// TODO add your code here
 	}
 
 	public static Iterable<Plant> getAvailablePlants() {
