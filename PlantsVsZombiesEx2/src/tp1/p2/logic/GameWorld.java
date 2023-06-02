@@ -9,37 +9,28 @@ public interface GameWorld {
 
 	public static final int NUM_COLS = 8;
 
-	// TODO add your code here
-
+	//AddsSun
 	void addSun();
 
+	//Object catch
 	boolean tryToCatchObject(int col, int row);
 
+	//Add a GO to the game
 	boolean addItem(GameObject gameObject);
 
-	/**
-	 * Executes the game actions and update the game objects in the board.
-	 * 
-	 */
+	//Executes the game actions and update the game objects in the board.
 	void update();
 
-	/**
-	 * Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
-	 * 
-	 * @param col Column of the cell
-	 * @param row Row of the cell
-	 * 
-	 * @return <code>true</code> if the cell is fully occupied, <code>false</code>
-	 *         otherwise.
-	 */
+	//Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
 	boolean isFullyOcuppied(int col, int row);
 	
 	//Returns true if the player has enough coins to buy the plant in the argument
 	public boolean canBuy(Plant plant);
 		
-		//To exit the game
+	//Exit the game
 	public void exit();
 	
+	//Resests the game
 	public void reset();
 		
 

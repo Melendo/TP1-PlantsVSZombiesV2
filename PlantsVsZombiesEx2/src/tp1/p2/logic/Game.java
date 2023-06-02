@@ -67,12 +67,12 @@ public class Game implements GameStatus, GameWorld {
 		this.seed = seed;
 		this.random = new Random(seed);
 		this.cycle = 0;
-		this.actions = new ArrayDeque<>();
+		//this.actions = new ArrayDeque<>();
 		quits = false;
 		suncoins = INITIAL_SUNCOINS;
 		zombiesManager = new ZombiesManager(this, level, random);
 		container = new GameObjectContainer();
-		sunsManager = new SunsManager(this, random);
+		//sunsManager = new SunsManager(this, random);
 	}
 
 	//Executes the game actions and update the game objects in the board.
@@ -226,8 +226,7 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
-		
+		this.quits= true;
 	}
 	
 	
