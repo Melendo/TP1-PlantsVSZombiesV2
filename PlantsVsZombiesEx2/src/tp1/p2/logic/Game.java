@@ -10,6 +10,7 @@ import java.util.Random;
 import tp1.p2.control.Command;
 import tp1.p2.control.ExecutionResult;
 import tp1.p2.control.Level;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.actions.GameAction;
 import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.view.Messages;
@@ -206,7 +207,7 @@ public class Game implements GameStatus, GameWorld {
 	}
 
 	//Executes a specific command given
-	public boolean execute(Command command) {
+	public boolean execute(Command command) throws GameException{
 		return command.execute(this);
 	}
 
