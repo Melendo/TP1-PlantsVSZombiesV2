@@ -76,12 +76,16 @@ public class Controller {
 			if (words.length == 0) {
 				System.out.println(error(Messages.UNKNOWN_COMMAND));
 			} else {
-				Command command = Command.parse(words);
-				if (command != null) {
-					// 3-4. Game Action & Update
-					refreshDisplay = game.execute(command);
-				} else {
-					refreshDisplay = false;
+				try {
+					Command command = Command.parse(words);
+					if (command != null) {
+						// 3-4. Game Action & Update
+						refreshDisplay = game.execute(command);
+					} else {
+						refreshDisplay = false;
+					}
+				}catch(GameException e) {
+					System.out.println(error(e.getMessage()));
 				}
 			}
 		}
