@@ -6,6 +6,7 @@ import tp1.p2.control.Command;
 import tp1.p2.control.ExecutionResult;
 import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
+import tp1.p2.exceptions.NotEnoughCoinsException;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.logic.gameobjects.Plant;
 import tp1.p2.logic.gameobjects.PlantFactory;
@@ -27,6 +28,13 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	public AddPlantCommand(boolean consumeCoins) {
 		this.consumeCoins = consumeCoins;
+	}
+
+	public AddPlantCommand(String plantName, int col, int row) {
+		// TODO Auto-generated constructor stub
+		this.col = col;
+		this.row = row;
+		this.plantName = plantName;
 	}
 
 	@Override
@@ -52,21 +60,39 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	public boolean execute(GameWorld game) throws GameException {
-		if(PlantFactory.isValidPlant(plantName) && !game.isFullyOcuppied(col, row)) {
+		if(!game.isFullyOcuppied(col, row)) { 
+			if(game.canBuy(PlantFactory.spawnPlant(plantName, game, col, row))) {
+				game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
+				game.update();
+			} else {
+				throw new NotEnoughCoinsException(Messages.NOT_ENOUGH_COINS);
+			}
 			
-			game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
 		} else {
-			throw new CommandParseException((Messages.INVALID_GAME_OBJECT));
+			throw new CommandParseException(Messages.INVALID_POSITION);
 		}
 		return true;
 		// TODO add your code here
 	}
 
 	@Override
-	public Command create(String[] parameters) {
-		return null;
+	public Command create(String[] parameters) throws GameException {
+		Command command = null;
+		if(PlantFactory.isValidPlant(parameters[1])) {
+			if(Integer.parseInt(parameters[2]) > 0 && Integer.parseInt(parameters[3]) > 0) {
+				try {
+						command = (AddZombieCommand) clone();
+				} catch (CloneNotSupportedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			} else throw new CommandParseException(Messages.INVALID_POSITION);
+		} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT);
 		// TODO add your code here
+		return command;
 	}
+	
 
 }
 

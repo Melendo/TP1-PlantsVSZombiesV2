@@ -7,6 +7,9 @@ import tp1.p2.control.ExecutionResult;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
+
+//Commando tercera version creo
+
 public class CatchCommand extends Command {
 
 	private static boolean caughtSunThisCycle = false;

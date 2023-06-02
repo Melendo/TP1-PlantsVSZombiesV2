@@ -35,5 +35,11 @@ public class ListPlantsCommand extends Command {
 
 		return true;
 	}
+	
+	@Override
+	public Command create(String[] parameters){
+		// TODO Auto-generated method stub
+		return this;
+	}
 
 }

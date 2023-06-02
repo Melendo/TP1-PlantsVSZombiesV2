@@ -4,6 +4,8 @@ import static tp1.p2.view.Messages.error;
 
 import tp1.p2.control.Command;
 import tp1.p2.control.ExecutionResult;
+import tp1.p2.exceptions.CommandParseException;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.logic.gameobjects.Zombie;
 import tp1.p2.logic.gameobjects.ZombieFactory;
@@ -48,14 +50,32 @@ public class AddZombieCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(GameWorld game) {
+	public boolean execute(GameWorld game) throws GameException { //Ya compruebo en create si el zombie es valido
+		if(!game.isFullyOcuppied(col, row)) {
+			game.addItem(ZombieFactory.spawnZombie(zombieIdx, game, col, row));
+			game.update();
+		} else throw new CommandParseException(Messages.INVALID_POSITION);
 		return true;
 		// TODO add your code here
 	}
 
 	@Override
-	public Command create(String[] parameters) {
-		return null;
+	public Command create(String[] parameters) throws GameException {
+		Command command = null;
+		if(parameters.length == 4) {
+			if(ZombieFactory.isValidZombie(Integer.parseInt(parameters[1]))) {
+				if(Integer.parseInt(parameters[2]) >= 0 && Integer.parseInt(parameters[3]) >= 0) {
+					try {
+						command = (AddZombieCommand) clone();
+					} catch (CloneNotSupportedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else throw new CommandParseException(Messages.INVALID_POSITION);
+			} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT);
+		} else throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
+		
+		return command;
 		// TODO add your code here
 	}
 

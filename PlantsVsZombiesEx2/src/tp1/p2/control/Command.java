@@ -43,7 +43,7 @@ public abstract class Command {
 
 	private static Command defaultCommand;
 
-	public static Command parse(String[] commandWords) {
+	public static Command parse(String[] commandWords) throws GameException {
 		if (commandWords.length == 1 && commandWords[0].isEmpty()) {
 			return defaultCommand.create(commandWords);
 		}
@@ -106,7 +106,7 @@ public abstract class Command {
 	 */
 	public abstract boolean execute(GameWorld game) throws GameException;
 
-	public Command create(String[] parameters) {
+	public Command create(String[] parameters) throws GameException {
 		if (parameters.length != 0) {
 			System.out.println(error(Messages.COMMAND_INCORRECT_PARAMETER_NUMBER));
 			return null;
@@ -119,4 +119,7 @@ public abstract class Command {
 	 */
 	protected void newCycleStarted() {
 	}
+	
+	
+	
 }

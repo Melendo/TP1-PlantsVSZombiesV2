@@ -30,7 +30,13 @@ public class ExitCommand extends Command {
 	@Override
 	public boolean execute(GameWorld game) {
 		// TODO add your code here
-		return true;
+		game.exit();
+		return false;
+	}
+	
+	@Override
+	public Command create(String[] parameters) {
+		return this;
 	}
 
 }

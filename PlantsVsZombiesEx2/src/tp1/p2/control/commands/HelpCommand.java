@@ -35,13 +35,20 @@ public class HelpCommand extends Command {
 			/* @formatter:off */
 
 			// TODO add your code here
-
+			buffer.append(Messages.LINE_SEPARATOR);
+			buffer.append(command.getDetails() + ": " + command.getHelp());
 			/* @formatter:on */
 		}
 
 		System.out.println(buffer.toString());
 
 		return true;
+	}
+	
+	@Override
+	public Command create(String[] parameters){
+		// TODO Auto-generated method stub
+		return this;
 	}
 
 }

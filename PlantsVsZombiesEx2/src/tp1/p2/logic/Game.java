@@ -13,6 +13,7 @@ import tp1.p2.control.Level;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.actions.GameAction;
 import tp1.p2.logic.gameobjects.GameObject;
+import tp1.p2.logic.gameobjects.Plant;
 import tp1.p2.view.Messages;
 
 public class Game implements GameStatus, GameWorld {
@@ -216,6 +217,23 @@ public class Game implements GameStatus, GameWorld {
 	public void subtractSuncoins(int x) {
 		this.suncoins -= x;
 	}
+
+	@Override
+	public boolean canBuy(Plant plant) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void exit() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	
 	
 
 

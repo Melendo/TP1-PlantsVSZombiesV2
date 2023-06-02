@@ -1,6 +1,7 @@
 package tp1.p2.logic;
 
 import tp1.p2.logic.gameobjects.GameObject;
+import tp1.p2.logic.gameobjects.Plant;
 
 public interface GameWorld {
 
@@ -32,5 +33,14 @@ public interface GameWorld {
 	 *         otherwise.
 	 */
 	boolean isFullyOcuppied(int col, int row);
+	
+	//Returns true if the player has enough coins to buy the plant in the argument
+	public boolean canBuy(Plant plant);
+		
+		//To exit the game
+	public void exit();
+	
+	public void reset();
+		
 
 }

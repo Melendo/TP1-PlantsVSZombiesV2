@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import tp1.p2.control.Controller;
 import tp1.p2.control.Level;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.Game;
 import tp1.p2.view.Messages;
 
@@ -26,8 +27,9 @@ public class PlantsVsZombies {
 	 * PlantsVSZombies entry point
 	 * 
 	 * @param args Arguments for the game.
+	 * @throws GameException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws GameException {
 		// Required to avoid issues with tests
 		Locale.setDefault(new Locale("es", "ES"));
 

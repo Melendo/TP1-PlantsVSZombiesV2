@@ -44,6 +44,7 @@ public class ResetCommand extends Command {
 
 	@Override
 	public boolean execute(GameWorld game){
+		game.reset();
 		return true;
 		// TODO add your code here
 	}

@@ -35,7 +35,13 @@ public class NoneCommand extends Command {
 	@Override
 	public boolean execute(GameWorld game) {
 		// TODO add your code here
+		game.update();
 		return true;
+	}
+	
+	@Override
+	public Command create(String[] parameters) {
+		return this;
 	}
 
 }
