@@ -210,9 +210,9 @@ public class Game implements GameStatus, GameWorld {
 		return command.execute(this);
 	}
 
+	//Substracts x suncions
 	@Override
 	public void subtractSuncoins(int x) {
-		// TODO Auto-generated method stub
 		this.suncoins -= x;
 	}
 	
