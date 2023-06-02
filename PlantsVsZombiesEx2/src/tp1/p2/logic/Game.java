@@ -216,8 +216,6 @@ public class Game implements GameStatus, GameWorld {
 		this.suncoins -= x;
 	}
 	
-	
 
-	// TODO add your code here
 
 }
