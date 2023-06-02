@@ -36,8 +36,6 @@ public class Game implements GameStatus, GameWorld {
 	
 	private SunsManager sunsManager;
 	
-	private boolean dead;
-	
 	private boolean quits;
 	
 	private boolean zombiesWin;
@@ -52,20 +50,13 @@ public class Game implements GameStatus, GameWorld {
 		reset();
 	}
 
-	/**
-	 * Resets the game.
-	 */
+	//Resets the game.
 	@Override
 	public void reset() {
 		reset(this.level, this.seed);
 	}
 
-	/**
-	 * Resets the game with the provided level and seed.
-	 * 
-	 * @param level {@link Level} Used to initialize the game.
-	 * @param seed Random seed Used to initialize the game.
-	 */
+	//Resets the game with the provided level and seed.
 	@Override
 	public void reset(Level level, long seed) {
 		// TODO add your code here
@@ -82,10 +73,7 @@ public class Game implements GameStatus, GameWorld {
 		sunsManager = new SunsManager(this, random);
 	}
 
-	/**
-	 * Executes the game actions and update the game objects in the board.
-	 * 
-	 */
+	//Executes the game actions and update the game objects in the board.
 	@Override
 	public void update() {
 
@@ -118,6 +106,7 @@ public class Game implements GameStatus, GameWorld {
 
 	}
 
+	//Executes all the pending actions
 	private void executePendingActions() {
 		while (!this.actions.isEmpty()) {
 			GameAction action = this.actions.removeLast();
@@ -125,35 +114,30 @@ public class Game implements GameStatus, GameWorld {
 		}
 	}
 
+	//Return true if there are pending actions
 	private boolean areTherePendingActions() {
 		return this.actions.size() > 0;
 	}
 
-	/**
-	 * Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
-	 * 
-	 * @param col Column of the cell
-	 * @param row Row of the cell
-	 * 
-	 * @return <code>true</code> if the cell is fully occupied, <code>false</code>
-	 *         otherwise.
-	 */
+	// Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
 	@Override
 	public boolean isFullyOcuppied(int col, int row) {
 		return this.container.isFullyOccupied(col, row);
 	}
 
+	//Return if player quited the game
 	public boolean isPlayerQuits() {
 		return this.quits;
 	}
 
+	//Return true if the game ended
 	public boolean isFinished() {
 		boolean resul = false;
-		if(zombieArrived()) {
+		if(container.zombieArrived()) {
 			this.zombiesWin = true;
 			resul = zombiesWin;
 		}
-		else if(zombiesManager.getRemainingZombies() == 0 && allZombiesDied()) {
+		else if(zombiesManager.getRemainingZombies() == 0 && container.allZombiesDied()) {
 			this.playerWin = true;
 			resul = playerWin;
 		}
@@ -163,28 +147,20 @@ public class Game implements GameStatus, GameWorld {
 		return resul;
 	}
 
-	private boolean allZombiesDied() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	private boolean zombieArrived() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	//Adds Sun
 	@Override
 	public void addSun() {
 		// TODO Auto-generated method stub
-		
 	}
 
+	//Try to catch
 	@Override
 	public boolean tryToCatchObject(int col, int row) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	//Ads an Item to the game
 	@Override
 	public boolean addItem(GameObject gameObject) {
 		// TODO Auto-generated method stub
@@ -203,7 +179,7 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public int getRemainingZombies() {
-		return 0;
+		return zombiesManager.getRemainingZombies();
 	}
 
 	@Override

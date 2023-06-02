@@ -67,16 +67,22 @@ public class GameObjectContainer {
 		return fullyOcuppied;
 	}
 
-	// TODO add your code here
-
 	public boolean zombieArrived() {
 		
 		for(GameObject go : gameObjects) {
 			if(go.isNPC() && go.getCol() == -1) {
-				playerDied();
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public boolean allZombiesDied() {
+		for(GameObject go : gameObjects) {
+			if(go.isNPC()) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
