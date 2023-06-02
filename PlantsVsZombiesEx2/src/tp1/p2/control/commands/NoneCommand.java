@@ -33,9 +33,9 @@ public class NoneCommand extends Command {
 	}
 
 	@Override
-	public ExecutionResult execute(GameWorld game) {
+	public boolean execute(GameWorld game) {
 		// TODO add your code here
-		return null;
+		return true;
 	}
 
 }

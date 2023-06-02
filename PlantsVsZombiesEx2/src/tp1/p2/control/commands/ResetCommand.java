@@ -43,10 +43,9 @@ public class ResetCommand extends Command {
 	}
 
 	@Override
-	public ExecutionResult execute(GameWorld game){
-		return null;
+	public boolean execute(GameWorld game){
+		return true;
 		// TODO add your code here
-
 	}
 
 	@Override

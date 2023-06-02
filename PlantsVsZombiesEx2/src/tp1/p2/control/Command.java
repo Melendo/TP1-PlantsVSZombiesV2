@@ -102,7 +102,7 @@ public abstract class Command {
 	 * 
 	 * @return {@code true} if game board must be printed {@code false} otherwise.
 	 */
-	public abstract ExecutionResult execute(GameWorld game);
+	public abstract boolean execute(GameWorld game);
 
 	public Command create(String[] parameters) {
 		if (parameters.length != 0) {

@@ -31,9 +31,9 @@ public class AddPlantCheatCommand extends Command implements Cloneable{
 	}
 
 	@Override
-	public ExecutionResult execute(GameWorld game) {
+	public boolean execute(GameWorld game) {
 		// TODO Auto-generated method stub
-		return null;
+		return true;
 	}
 	
 	@Override

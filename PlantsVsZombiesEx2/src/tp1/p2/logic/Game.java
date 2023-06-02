@@ -166,46 +166,48 @@ public class Game implements GameStatus, GameWorld {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	//Returns number of cycle
 	@Override
 	public int getCycle() {
 		return this.cycle;
 	}
 
+	//Return suncoins
 	@Override
 	public int getSuncoins() {
 		return this.suncoins;
 	}
 
+	//Returns remaining zombies
 	@Override
 	public int getRemainingZombies() {
 		return zombiesManager.getRemainingZombies();
 	}
 
+	//Returns the string that represents the object
 	@Override
 	public String positionToString(int col, int row) {
-
-        String sol = " ";
-        return sol;
+		return container.positionToString(col, row);
 	}
 
-
-
+	//Return the Gen Suns
 	@Override
 	public int getGeneratedSuns() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	//Return Caught Suns
 	@Override
 	public int getCaughtSuns() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	//Executes a specific command given
 	public boolean execute(Command command) {
-		// TODO Auto-generated method stub
-		return false;
+		return command.execute(this);
 	}
 
 	@Override

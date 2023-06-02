@@ -28,7 +28,7 @@ public class HelpCommand extends Command {
 	}
 
 	@Override
-	public ExecutionResult execute(GameWorld game) {
+	public boolean execute(GameWorld game) {
 		StringBuilder buffer = new StringBuilder(Messages.HELP_AVAILABLE_COMMANDS);
 
 		for (Command command : Command.getAvailableCommands()) {
@@ -41,7 +41,7 @@ public class HelpCommand extends Command {
 
 		System.out.println(buffer.toString());
 
-		return new ExecutionResult(false);
+		return true;
 	}
 
 }
