@@ -10,7 +10,7 @@ public class GamePrinter {
 
 	private static final String SPACE = " ";
 
-	private static final String CELL_BORDER_CHAR = "─";
+	private static final String CELL_BORDER_CHAR = "-";
 
 	private static final String VERTICAL_DELIMITER = "|";
 
@@ -44,13 +44,17 @@ public class GamePrinter {
 	 * @return the string that represents the game status.
 	 */
 	protected String getInfo() {
-		StringBuilder buffer = new StringBuilder();
 
 		/* @formatter:off */
 		// TODO add your code here
 		/* @formatter:on */
-
-		return buffer.toString();
+		
+		if(game.getCycle() == 0) {
+			return String.format(Messages.CONFIGURED_LEVEL, game.getLevel()) + "\n" + String.format(Messages.CONFIGURED_SEED, game.getSeed()) + "\n" + Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + "\n" + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + "\n" + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + "\n" + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + "\n" + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + "\n" ;
+		}
+		else {
+			return Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + "\n" + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + "\n" + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + "\n"  + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + "\n" + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + "\n" ;
+		}
 	}
 
 	/**
@@ -95,7 +99,18 @@ public class GamePrinter {
 	 *         finished.
 	 */
 	public String endMessage() {
-		return null;
-		// TODO add your code here
+		
+		if(game.isPlayerQuits()) {
+			return Messages.GAME_OVER + "\n" + Messages.PLAYER_QUITS;
+		}
+		else if(game.getPlayerWin()) {
+			return Messages.GAME_OVER + "\n" + Messages.PLAYER_WINS;
+		}
+		else if(game.getZombiesWin()) {
+			return Messages.GAME_OVER + "\n" + Messages.ZOMBIES_WIN;
+		}
+		
+		StringBuilder buffer = new StringBuilder(Messages.GAME_OVER);
+		return buffer.toString();
 	}
 }

@@ -81,6 +81,15 @@ public interface GameStatus {
 	
 	void subtractSuncoins(int x);
 
-	// TODO add your code here
+	Level getLevel();
+
+	long getSeed();
+	
+	boolean isPlayerQuits();
+	
+	boolean getZombiesWin();
+	
+	boolean getPlayerWin();
+
 
 }

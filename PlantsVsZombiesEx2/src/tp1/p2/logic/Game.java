@@ -127,9 +127,22 @@ public class Game implements GameStatus, GameWorld {
 		return this.container.isFullyOccupied(col, row);
 	}
 
+	@Override
 	//Return if player quited the game
 	public boolean isPlayerQuits() {
 		return this.quits;
+	}
+	
+	@Override
+	//Return if zombies won the game
+	public boolean getZombiesWin() {
+		return this.zombiesWin;
+	}
+	
+	@Override
+	//Return if player won the game
+	public boolean getPlayerWin() {
+		return this.playerWin;
 	}
 
 	//Return true if the game ended
@@ -229,6 +242,15 @@ public class Game implements GameStatus, GameWorld {
 		this.quits= true;
 	}
 	
+	@Override
+	public Level getLevel() {
+		return this.level;
+	}
+	
+	@Override
+	public long getSeed() {
+		return this.seed;
+	}
 	
 	
 	
