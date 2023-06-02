@@ -20,14 +20,14 @@ public class ZombiesManager {
 
 	private int remainingZombies;
 	
-	private int zombiesAlived;
+	private int zombiesAlive;
 
 	public ZombiesManager(GameWorld game, Level level, Random rand) {
 		this.game = game;
 		this.level = level;
 		this.rand = rand;
 		this.remainingZombies = level.getNumberOfZombies();
-		this.zombiesAlived = 0;
+		this.zombiesAlive  = 0;
 	}
 
 	/**
