@@ -17,4 +17,5 @@ public class ExplosiveZombie extends Zombie {
 	public Zombie create(GameWorld game, int row) {
 		return new ExplosiveZombie(game, row);
 	}
+	
 }

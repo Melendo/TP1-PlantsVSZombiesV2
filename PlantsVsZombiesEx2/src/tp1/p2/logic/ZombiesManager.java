@@ -76,7 +76,7 @@ public class ZombiesManager {
 		return false;
 	}
 
-	private int getRemainingZombies() {
+	public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

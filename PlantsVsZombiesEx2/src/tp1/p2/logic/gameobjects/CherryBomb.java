@@ -70,4 +70,5 @@ public class CherryBomb extends Plant {
 		// TODO Auto-generated method stub
 		
 	}
+	
 }

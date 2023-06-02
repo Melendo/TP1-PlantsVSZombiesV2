@@ -71,4 +71,9 @@ public class Sun extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public boolean isNPC() {
+		return false;
+	}
 }

@@ -80,5 +80,9 @@ public class Zombie extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public boolean isNPC() {
+		return true;
+	}
 
 }

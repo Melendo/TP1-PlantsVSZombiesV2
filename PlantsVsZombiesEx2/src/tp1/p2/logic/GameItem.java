@@ -39,5 +39,7 @@ public interface GameItem {
 	 * @return <code>true</code> if the sun has been catched, <code>false</code> otherwise.
 	 */
 	boolean catchObject();
+	
+	boolean isNPC();
 
 }

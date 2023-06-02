@@ -40,9 +40,11 @@ public class Game implements GameStatus, GameWorld {
 	
 	private boolean quits;
 	
+	private boolean zombiesWin;
+	
+	private boolean playerWin;
 
-	// TODO add your attributes here
-
+	//Constructor
 	public Game(long seed, Level level) {
 		this.seed = seed;
 		this.level = level;
@@ -80,7 +82,6 @@ public class Game implements GameStatus, GameWorld {
 		sunsManager = new SunsManager(this, random);
 	}
 
-
 	/**
 	 * Executes the game actions and update the game objects in the board.
 	 * 
@@ -96,6 +97,9 @@ public class Game implements GameStatus, GameWorld {
 
 		// 3. Game object updates
 		// TODO add your code here
+		zombiesManager.update();
+		container.update();
+		sunsManager.update();
 
 		// 4. & 5. Remove dead and execute pending actions
 		boolean deadRemoved = true;
@@ -140,11 +144,31 @@ public class Game implements GameStatus, GameWorld {
 	}
 
 	public boolean isPlayerQuits() {
+		return this.quits;
+	}
+
+	public boolean isFinished() {
+		boolean resul = false;
+		if(zombieArrived()) {
+			this.zombiesWin = true;
+			resul = zombiesWin;
+		}
+		else if(zombiesManager.getRemainingZombies() == 0 && allZombiesDied()) {
+			this.playerWin = true;
+			resul = playerWin;
+		}
+		else {
+			resul = isPlayerQuits();
+		}
+		return resul;
+	}
+
+	private boolean allZombiesDied() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	public boolean isFinished() {
+	private boolean zombieArrived() {
 		// TODO Auto-generated method stub
 		return false;
 	}

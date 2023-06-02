@@ -18,4 +18,5 @@ public class BucketHead extends Zombie {
 	public Zombie create(GameWorld game, int row) {
 		return new BucketHead(game, row);
 	}
+	
 }

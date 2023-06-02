@@ -20,4 +20,8 @@ public abstract class Plant extends GameObject{
 	public String getSymbol() {
 		return symbol;
 	}
+	@Override
+	public boolean isNPC() {
+		return false;
+	}
 }
