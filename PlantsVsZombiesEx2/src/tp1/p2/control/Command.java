@@ -16,6 +16,7 @@ import tp1.p2.control.commands.ListPlantsCommand;
 import tp1.p2.control.commands.ListZombiesCommand;
 import tp1.p2.control.commands.NoneCommand;
 import tp1.p2.control.commands.ResetCommand;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
@@ -101,8 +102,9 @@ public abstract class Command {
 	 * @param game Where to execute the command.
 	 * 
 	 * @return {@code true} if game board must be printed {@code false} otherwise.
+	 * @throws GameException 
 	 */
-	public abstract boolean execute(GameWorld game);
+	public abstract boolean execute(GameWorld game) throws GameException;
 
 	public Command create(String[] parameters) {
 		if (parameters.length != 0) {

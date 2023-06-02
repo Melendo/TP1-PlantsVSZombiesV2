@@ -4,6 +4,8 @@ import static tp1.p2.view.Messages.error;
 
 import tp1.p2.control.Command;
 import tp1.p2.control.ExecutionResult;
+import tp1.p2.exceptions.CommandParseException;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.logic.gameobjects.Plant;
 import tp1.p2.logic.gameobjects.PlantFactory;
@@ -49,12 +51,12 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 
 	@Override
-	public boolean execute(GameWorld game) {
+	public boolean execute(GameWorld game) throws GameException {
 		if(PlantFactory.isValidPlant(plantName) && !game.isFullyOcuppied(col, row)) {
 			
 			game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
 		} else {
-			System.out.println("The plant selected doesnt exist or the position selected is occupied");
+			throw new CommandParseException((Messages.INVALID_GAME_OBJECT));
 		}
 		return true;
 		// TODO add your code here
