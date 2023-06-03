@@ -38,6 +38,12 @@ public class GameObjectContainer {
 	}
 
 	public boolean removeDead() {
+		for(int i = 0; i < gameObjects.size(); i++) {
+			if(!this.gameObjects.get(i).isAlive()) {
+				this.gameObjects.remove(i);
+				return true;
+			}
+		}
 		return false;
 		// TODO add your code here
 	}
@@ -109,12 +115,22 @@ public class GameObjectContainer {
 	}
 
 	public boolean attackPlant(int i, int row, int dmg) {
-		boolean resul = false;
+		boolean res = false;
 		for(GameObject go : gameObjects) {
 			if(go.isAlive() && go.isInPosition(i, row)){
-				resul = go.receiveZombieAttack(dmg);	
+				res = go.receiveZombieAttack(dmg);	
 			}
 		}
-		return resul;
+		return res;
+	}
+	
+	public boolean attackZombie(int col, int row, int dmg) {
+		boolean res = false;
+		for(int i = 0; i < gameObjects.size(); i++) {
+			if(gameObjects.get(i).getCol() == col && gameObjects.get(i).getRow() == row) {
+				res = gameObjects.get(i).receivePlantAttack(dmg);
+			}
+		}
+		return res;
 	}
 }

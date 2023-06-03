@@ -6,90 +6,94 @@ import tp1.p2.view.Messages;
 
 public class Sunflower extends Plant {
 
-	public static final int COST = 20;
-	public static final int DMG = 0;
-	public static final int HP = 1;
-	public static final int GEN_SUNS = 10;
-	public static final int GEN_CCL = 3;
+	public static final int HP = 3;
+	public static final int COST = 50;
+	public static final int DMG = 1;
 	
-	private int shouldGenerate ;
+	protected final String name = Messages.SUNFLOWER_NAME;
+	protected final String symbol = Messages.SUNFLOWER_SYMBOL;
 	
-	public Sunflower(GameWorld game, int col, int row){
-		super(game, col, row);
+	
+	public Sunflower(GameWorld game, int col, int row) {
+		super(game, col, row, HP);
+		// TODO Auto-generated constructor stub
 	}
 	
 	public Sunflower() {
-		this.name = getName();
+		// TODO Auto-generated constructor stub
 		this.hp = HP;
 	}
-	
-	public String getDescription1() {
+
+	public String getDescription() {
 		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
 		return str ;
 	}
-	
-	public boolean sunGeneration() {
-		
-		if(this.shouldGenerate < (GEN_CCL - 1 )) {
-			this.shouldGenerate++;
-		} else {
-			this.shouldGenerate = 0;
-			return true;	
-		}
+
+	@Override
+	public Plant create(GameWorld game, int col, int row) {
+		// TODO Auto-generated method stub
+		return new Peashooter(game, col, row);
+	}
+
+	@Override
+	public int getCooldown() {
+		// TODO Auto-generated method stub
+		return this.cooldown;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
+
+	@Override
+	public String getSymbol() {
+		// TODO Auto-generated method stub
+		return this.symbol;
+	}
+
+	@Override
+	public int getCost() {
+		// TODO Auto-generated method stub
+		return this.COST;
+	}
+
+	@Override
+	public Plant copy(GameWorld game, int col, int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean receivePlantAttack(int damage) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
-		@Override
-		public boolean receiveZombieAttack(int damage) {
-			// TODO Auto-generated method stub
-			return false;
-		}
+	@Override
+	public boolean fillPosition() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-		@Override
-		public boolean receivePlantAttack(int damage) {
-			// TODO Auto-generated method stub
-			return false;
+	@Override
+	public void update() {
+		if(isAlive()) {
+			int i = this.col;
+			boolean terminado = false;
+			while(!terminado && i < game.NUM_COLS) {
+				if(game.attackZombie(i, this.row, DMG)) {
+					terminado = true;
+				}
+				else i++;
+			}
 		}
+	}
 
-		@Override
-		public boolean fillPosition() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public boolean catchObject() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public Plant create (GameWorld game, int col, int row) {
-			// TODO Auto-generated method stub
-			return new Sunflower(game, col, row);
-		}
-
-		@Override
-		public String getDescription() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void update() {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onEnter() {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onExit() {
-			// TODO Auto-generated method stub
-			
-		}
+	@Override
+	public String getShortcut() {
+		// TODO Auto-generated method stub
+		return Messages.SUNFLOWER_NAME_SHORTCUT;
+	}
 }

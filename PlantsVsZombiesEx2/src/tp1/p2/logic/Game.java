@@ -238,7 +238,7 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public boolean canBuy(Plant plant) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -264,6 +264,13 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public boolean attackPlant(int i, int row, int dmg) {
 		return container.attackPlant(i, row, dmg);
+		
+	}
+
+	@Override
+	public boolean attackZombie(int i, int row, int dmg) {
+		// TODO Auto-generated method stub
+		return this.container.attackZombie(i, row, dmg);
 	}
 	
 	

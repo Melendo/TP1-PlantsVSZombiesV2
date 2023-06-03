@@ -76,4 +76,10 @@ public class Sun extends GameObject {
 	public boolean isNPC() {
 		return false;
 	}
+
+	@Override
+	public int getCooldown() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

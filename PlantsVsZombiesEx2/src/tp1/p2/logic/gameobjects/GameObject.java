@@ -23,10 +23,12 @@ public abstract class GameObject implements GameItem {
 	GameObject() {
 	}
 
-	GameObject(GameWorld game, int col, int row) {
+	GameObject(GameWorld game, int col, int row, int hp) {
 		this.game = game;
 		this.col = col;
+		this.cooldown = 0;
 		this.row = row;
+		this.hp = hp;
 	}
 
 	public boolean isInPosition(int col, int row) {
@@ -34,15 +36,15 @@ public abstract class GameObject implements GameItem {
 	}
 
 	public int getCol() {
-		return col;
+		return this.col;
 	}
 
 	public int getRow() {
-		return row;
+		return this.row;
 	}
 	
 	public int getHp() {
-		return hp;
+		return this.hp;
 	}
 	
 	public void setCol(int col) {
@@ -71,19 +73,27 @@ public abstract class GameObject implements GameItem {
 	public String toString() {
 		if (isAlive()) {
 			// TODO add your code here
+			String string = this.getSymbol() + "[" + this.hp + "]";
+			return string;
 		} else {
 			return "";
 		}
-		return null;
 	}
 
 	protected abstract String getSymbol();
 
 	public abstract String getDescription();
+	
+	public abstract int getCooldown();
 
 	abstract public void update();
 	
 	abstract public void onEnter();
 	
 	abstract public void onExit();
+	
+	public boolean catchObject() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

@@ -111,4 +111,10 @@ public class Zombie extends GameObject {
 		return true;
 	}
 
+	@Override
+	public int getCooldown() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

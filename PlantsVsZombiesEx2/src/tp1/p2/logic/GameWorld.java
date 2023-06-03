@@ -38,6 +38,10 @@ public interface GameWorld {
 	public boolean isFinished();
 
 	public boolean attackPlant(int i, int row, int dmg);
+
+	boolean attackZombie(int i, int row, int dmg);
+
+
 		
 
 }
