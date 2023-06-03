@@ -9,26 +9,17 @@ import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.Game;
 import tp1.p2.view.Messages;
 
-/**
- * PlantsVsZombies main class.
- */
+
 public class PlantsVsZombies {
 
-	/**
-	 * Show application help message
-	 */
+	// Show application help message
 	private static void usage() {
 		System.out.println(Messages.USAGE);
 		System.out.println(Messages.USAGE_LEVEL_PARAM);
 		System.out.println(Messages.USAGE_SEED_PARAM);
 	}
 
-	/**
-	 * PlantsVSZombies entry point
-	 * 
-	 * @param args Arguments for the game.
-	 * @throws GameException 
-	 */
+	//PlantsVSZombies entry point
 	public static void main(String[] args) throws GameException {
 		// Required to avoid issues with tests
 		Locale.setDefault(new Locale("es", "ES"));

@@ -27,25 +27,18 @@ public class Controller {
 		this.gamePrinter = new GamePrinter(game);
 	}
 
-	/**
-	 * Draw / Paint the game.
-	 */
+	// Draw / Paint the game
 	private void printGame() {
 		System.out.println(gamePrinter);
 	}
 
-	/**
-	 * Prints the final message once the match is finished.
-	 */
+	//Prints the final message once the match is finished
 	public void printEndMessage() {
 		System.out.println(gamePrinter.endMessage());
 	}
-
-	/**
-	 * Show prompt and request command.
-	 *
-	 * @return the player command as words
-	 */
+ 
+	//Show prompt and request command.
+	//@return the player command as words
 	private String[] prompt() {
 		System.out.print(Messages.PROMPT);
 		String line = scanner.nextLine();

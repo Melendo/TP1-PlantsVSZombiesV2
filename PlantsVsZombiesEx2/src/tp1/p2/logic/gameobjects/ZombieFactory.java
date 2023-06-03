@@ -25,7 +25,8 @@ public class ZombieFactory {
 		if (isValidZombie(zombieIdx)) {
 			return AVAILABLE_ZOMBIES.get(zombieIdx).create(game, row);
 		}
-		// TODO add your code here
+		Zombie z = AVAILABLE_ZOMBIES.get(zombieIdx);
+		//return z.copy(game, col, row);
 		return null;
 	}
 

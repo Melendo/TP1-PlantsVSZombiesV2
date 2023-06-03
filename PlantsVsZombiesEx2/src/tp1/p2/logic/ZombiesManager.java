@@ -22,6 +22,7 @@ public class ZombiesManager {
 	
 	private int zombiesAlive;
 
+	//Builder
 	public ZombiesManager(GameWorld game, Level level, Random rand) {
 		this.game = game;
 		this.level = level;
@@ -30,37 +31,33 @@ public class ZombiesManager {
 		this.zombiesAlive  = 0;
 	}
 
-	/**
-	 * Checks if the game should add (if possible) a zombie to the game.
-	 * 
-	 * @return <code>true</code> if a zombie should be added to the game.
-	 */
+	//Checks if the game should add (if possible) a zombie to the game.
 	private boolean shouldAddZombie() {
 		return rand.nextDouble() < level.getZombieFrequency();
 	}
 
-	/**
-	 * Return a random row within the board limits.
-	 * 
-	 * @return a random row.
-	 */
+	//Return a random row within the board limits.
 	private int randomZombieRow() {
 		return rand.nextInt(GameWorld.NUM_ROWS);
 	}
 
+	//Return a random Zombie Type
 	private int randomZombieType() {
 		return rand.nextInt(ZombieFactory.getAvailableZombies().size());
 	}
 
+	//updates ZM
 	public void update() {
 		addZombie();
 	}
 
+	//Gets a random row and addZombie(row)
 	public boolean addZombie() {
 		int row = randomZombieRow();
 		return addZombie(row);
 	}
 
+	//Checks if it can add the zombie to that row, if it can he spawns it
 	public boolean addZombie(int row) {
 		boolean canAdd = getRemainingZombies() > 0 && shouldAddZombie() && isPositionEmpty(GameWorld.NUM_COLS, row);
 		int zombieType = randomZombieType();
@@ -71,15 +68,15 @@ public class ZombiesManager {
 		return canAdd;
 	}
 
+	//Checks if the position is Empty
 	private boolean isPositionEmpty(int numCols, int row) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
+		//return game.isPositionEmpty(numCols, row);
 	}
 
+	//Return remaining zombies
 	public int getRemainingZombies() {
 		return this.remainingZombies;
 	}
-
-	// TODO add your code here
 
 }
