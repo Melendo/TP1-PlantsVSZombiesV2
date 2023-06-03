@@ -34,6 +34,10 @@ public interface GameWorld {
 	public void reset();
 
 	public boolean isPositionEmpty(int numCols, int row);
+
+	public boolean isFinished();
+
+	public boolean attackPlant(int i, int row, int dmg);
 		
 
 }

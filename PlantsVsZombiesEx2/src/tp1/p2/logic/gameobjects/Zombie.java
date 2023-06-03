@@ -8,75 +8,90 @@ public class Zombie extends GameObject {
 	
 	public static final int HP = 5;
 	public static final int DMG = 1;
+	public static final int SPEED= 2;
 	private int shouldMove;
 	private String symbol = Messages.ZOMBIE_SYMBOL;
 	private String name = Messages.ZOMBIE_NAME;
 	private String description = Messages.ZOMBIE_DESCRIPTION;
 	
-	
-	
+	//Zombie Builder
 	public Zombie(GameWorld game, int row) {
 		this.game = game;
 		this.row = row;
 		this.col = Game.NUM_COLS + 1;
 		this.hp = HP;
-		this.shouldMove = - 1;
+		this.shouldMove = SPEED;
+		
 	}
 	
+	//Empty Zombie Builder
 	public Zombie() {
 		
 	}
 	
+	//Creates a new zombie
 	public Zombie create(GameWorld game, int row) {
 		return new Zombie(game, row);
 	}
 
+	//Recives zombieAttack = null
 	@Override
 	public boolean receiveZombieAttack(int damage) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
-	
+	//Recives PlantAttack
 	public boolean receivePlantAttack(int damage) {
-		// TODO Auto-generated method stub
 		this.damage(damage);
-		return false;
+		return true;
 	}
 
+	// Checks if the game object fills its current position
 	@Override
 	public boolean fillPosition() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean catchObject() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	protected String getSymbol() {
-		// TODO Auto-generated method stub
 		return this.symbol;
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return this.description;
 	}
 	
 	
 	public String getName() {
-		// TODO Auto-generated method stub
 		return this.name;
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		
+		if(this.col == -1) {
+			game.isFinished();
+		}
+		
+		else if(isAlive()) {
+			if(shouldMove == 0) {
+				shouldMove = SPEED;
+			}
+			shouldMove--;
+			if(game.isPositionEmpty(col - 1, row) && shouldMove == 0) {
+				col -= 1;
+			}
+			else if(!game.isPositionEmpty(col-1, row) ){
+				game.attackPlant(col-1, row, DMG);	
+			}
+			
+		}
 		
 	}
 

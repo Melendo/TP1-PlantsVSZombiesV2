@@ -145,6 +145,7 @@ public class Game implements GameStatus, GameWorld {
 		return this.playerWin;
 	}
 
+	@Override
 	//Return true if the game ended
 	public boolean isFinished() {
 		boolean resul = false;
@@ -180,9 +181,6 @@ public class Game implements GameStatus, GameWorld {
 	public boolean addItem(GameObject gameObject) {
 		if(isPositionEmpty(gameObject.getCol(), gameObject.getRow())) {
 			container.add(gameObject);
-			/*if(gameObject.isNpc()) {
-				zombiesManager.setRemainingZombies(zombiesManager.getRemainingZombies()+1);//no se esto hay que hacerlo
-			}*/
 			return true;
 		}
 		return false;
@@ -261,6 +259,11 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public boolean isPositionEmpty(int numCols, int row) {
 		return container.isPositionEmpty(numCols,row);
+	}
+	
+	@Override
+	public boolean attackPlant(int i, int row, int dmg) {
+		return container.attackPlant(i, row, dmg);
 	}
 	
 	

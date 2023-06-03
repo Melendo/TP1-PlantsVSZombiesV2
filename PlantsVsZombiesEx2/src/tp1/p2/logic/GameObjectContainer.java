@@ -107,4 +107,14 @@ public class GameObjectContainer {
 		 gameObject.onEnter();
 		
 	}
+
+	public boolean attackPlant(int i, int row, int dmg) {
+		boolean resul = false;
+		for(GameObject go : gameObjects) {
+			if(go.isAlive() && go.isInPosition(i, row)){
+				resul = go.receiveZombieAttack(dmg);	
+			}
+		}
+		return resul;
+	}
 }
