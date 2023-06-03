@@ -85,11 +85,11 @@ public interface GameStatus {
 
 	long getSeed();
 	
-	boolean isPlayerQuits();
+	public boolean isPlayerQuits();
 	
-	boolean getZombiesWin();
+	public boolean getZombiesWin();
 	
-	boolean getPlayerWin();
+	public boolean getPlayerWin();
 
 
 }

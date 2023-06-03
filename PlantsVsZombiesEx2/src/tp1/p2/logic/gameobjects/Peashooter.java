@@ -8,6 +8,8 @@ public class Peashooter extends Plant {
 	public static final int HP = 3;
 	public static final int COST = 50;
 	public static final int DMG = 1;
+	protected String name = "peashooter";
+	protected String symbol = "p";
 	
 	
 	public Peashooter(GameWorld game, int col, int row) {

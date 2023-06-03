@@ -79,7 +79,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 	public Command create(String[] parameters) throws GameException {
 		Command command = null;
 		if(PlantFactory.isValidPlant(parameters[1])) {
-			if(Integer.parseInt(parameters[2]) > 0 && Integer.parseInt(parameters[3]) > 0) {
+			if(Integer.parseInt(parameters[2]) >= 0 && Integer.parseInt(parameters[3]) >= 0) {
 				try {
 						command = (AddZombieCommand) clone();
 				} catch (CloneNotSupportedException e) {
@@ -87,8 +87,8 @@ public class AddPlantCommand extends Command implements Cloneable {
 					e.printStackTrace();
 				}
 				
-			} else throw new CommandParseException(Messages.INVALID_POSITION);
-		} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT);
+			} else throw new CommandParseException(Messages.INVALID_POSITION + "test");
+		} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT + parameters[1]);
 		// TODO add your code here
 		return command;
 	}

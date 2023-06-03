@@ -17,7 +17,7 @@ public class PlantFactory {
 	);
 	/* @formatter:on */
 
-	public static boolean isValidPlant(String plantName) {
+	public static boolean isValidPlant(String plantName) { //da siempre falso por alguna razon
 		for (Plant p : AVAILABLE_PLANTS) {
 			// TODO add your code here
 			if(p.getName() == plantName || p.getSymbol() == plantName) {

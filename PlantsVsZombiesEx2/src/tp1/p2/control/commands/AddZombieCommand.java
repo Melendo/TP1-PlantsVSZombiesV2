@@ -11,7 +11,7 @@ import tp1.p2.logic.gameobjects.Zombie;
 import tp1.p2.logic.gameobjects.ZombieFactory;
 import tp1.p2.view.Messages;
 
-public class AddZombieCommand extends Command {
+public class AddZombieCommand extends Command implements Cloneable {
 
 	private int zombieIdx;
 
@@ -20,7 +20,7 @@ public class AddZombieCommand extends Command {
 	private int row;
 
 	public AddZombieCommand() {
-
+		
 	}
 
 	private AddZombieCommand(int zombieIdx, int col, int row) {

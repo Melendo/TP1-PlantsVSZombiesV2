@@ -1,9 +1,13 @@
 package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.GameWorld;
+import tp1.p2.view.Messages;
 
 public class BucketHead extends Zombie {
 	public static final int HP = 10;
+	private String symbol = Messages.BUCKET_HEAD_ZOMBIE_SYMBOL;
+	private String name = Messages.BUCKET_HEAD_ZOMBIE_NAME;
+	private String description = Messages.ZOMBIE_DESCRIPTION;
 	
 	public BucketHead(GameWorld game, int row) {
 		// TODO Auto-generated constructor stub

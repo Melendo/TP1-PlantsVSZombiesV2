@@ -14,11 +14,11 @@ public abstract class Plant extends GameObject{
 	
 	
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	
 	public String getSymbol() {
-		return symbol;
+		return this.symbol;
 	}
 	@Override
 	public boolean isNPC() {

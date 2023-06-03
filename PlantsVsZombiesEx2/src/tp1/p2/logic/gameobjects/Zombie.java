@@ -2,12 +2,17 @@ package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.Game;
 import tp1.p2.logic.GameWorld;
+import tp1.p2.view.Messages;
 
 public class Zombie extends GameObject {
 	
 	public static final int HP = 5;
 	public static final int DMG = 1;
-	private int shouldMove ;
+	private int shouldMove;
+	private String symbol = Messages.ZOMBIE_SYMBOL;
+	private String name = Messages.ZOMBIE_NAME;
+	private String description = Messages.ZOMBIE_DESCRIPTION;
+	
 	
 	
 	public Zombie(GameWorld game, int row) {
@@ -54,13 +59,19 @@ public class Zombie extends GameObject {
 	@Override
 	protected String getSymbol() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.symbol;
 	}
 
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.description;
+	}
+	
+	
+	public String getName() {
+		// TODO Auto-generated method stub
+		return this.name;
 	}
 
 	@Override

@@ -38,6 +38,7 @@ public class ListZombiesCommand extends Command {
 		List<Zombie>  zombieList = (List<Zombie>) ZombieFactory.getAvailableZombies();
 		for(int i = 0; i< zombieList.size(); i++) {
 			//Hacer descripciones con el nombre incluido
+			System.out.print(zombieList.get(i).getName() + ": ");
 			System.out.println(zombieList.get(i).getDescription());
 		}
 		System.out.println();
