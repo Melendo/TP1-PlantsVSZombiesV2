@@ -20,7 +20,6 @@ public class ZombiesManager {
 
 	private int remainingZombies;
 	
-	private int zombiesAlive;
 
 	//Builder
 	public ZombiesManager(GameWorld game, Level level, Random rand) {
@@ -28,7 +27,6 @@ public class ZombiesManager {
 		this.level = level;
 		this.rand = rand;
 		this.remainingZombies = level.getNumberOfZombies();
-		this.zombiesAlive  = 0;
 	}
 
 	//Checks if the game should add (if possible) a zombie to the game.
@@ -63,15 +61,17 @@ public class ZombiesManager {
 		int zombieType = randomZombieType();
 
 		if (canAdd) {
-			// TODO add your code here
+			Zombie z = ZombieFactory.spawnZombie(zombieType, game, GameWorld.NUM_COLS, row);
+			remainingZombies--;
+			game.addItem(z);
+			
 		}
 		return canAdd;
 	}
 
 	//Checks if the position is Empty
 	private boolean isPositionEmpty(int numCols, int row) {
-		return true;
-		//return game.isPositionEmpty(numCols, row);
+		return game.isFullyOcuppied(numCols, row);
 	}
 
 	//Return remaining zombies
