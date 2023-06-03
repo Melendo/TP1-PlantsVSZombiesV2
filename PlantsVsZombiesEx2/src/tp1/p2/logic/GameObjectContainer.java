@@ -85,4 +85,26 @@ public class GameObjectContainer {
 		}
 		return true;
 	}
+
+	public boolean isPositionEmpty(int numCols, int row) {
+
+		if(gameObjects.isEmpty()) {
+			return true;
+		}
+		else {
+			for(GameObject go : gameObjects) {
+				if(go.getCol() == numCols && go.getRow() == row) {
+					return false;
+				}
+			}
+
+		}
+		return true;
+	}
+
+	public void add(GameObject gameObject) {
+		 gameObjects.add(gameObject);
+		 gameObject.onEnter();
+		
+	}
 }

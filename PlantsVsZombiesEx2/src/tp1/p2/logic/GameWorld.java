@@ -32,6 +32,8 @@ public interface GameWorld {
 	
 	//Resests the game
 	public void reset();
+
+	public boolean isPositionEmpty(int numCols, int row);
 		
 
 }

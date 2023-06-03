@@ -178,7 +178,13 @@ public class Game implements GameStatus, GameWorld {
 	//Ads an Item to the game
 	@Override
 	public boolean addItem(GameObject gameObject) {
-		// TODO Auto-generated method stub
+		if(isPositionEmpty(gameObject.getCol(), gameObject.getRow())) {
+			container.add(gameObject);
+			/*if(gameObject.isNpc()) {
+				zombiesManager.setRemainingZombies(zombiesManager.getRemainingZombies()+1);//no se esto hay que hacerlo
+			}*/
+			return true;
+		}
 		return false;
 	}
 	
@@ -252,6 +258,10 @@ public class Game implements GameStatus, GameWorld {
 		return this.seed;
 	}
 	
+	@Override
+	public boolean isPositionEmpty(int numCols, int row) {
+		return container.isPositionEmpty(numCols,row);
+	}
 	
 	
 	

@@ -60,6 +60,12 @@ public class ZombiesManager {
 		boolean canAdd = getRemainingZombies() > 0 && shouldAddZombie() && isPositionEmpty(GameWorld.NUM_COLS, row);
 		int zombieType = randomZombieType();
 
+		if(canAdd) {System.out.println("CanAdd");
+		}
+		else {
+			System.out.println("CantAdd");
+		}
+		
 		if (canAdd) {
 			Zombie z = ZombieFactory.spawnZombie(zombieType, game, GameWorld.NUM_COLS, row);
 			remainingZombies--;
@@ -71,7 +77,7 @@ public class ZombiesManager {
 
 	//Checks if the position is Empty
 	private boolean isPositionEmpty(int numCols, int row) {
-		return game.isFullyOcuppied(numCols, row);
+		return game.isPositionEmpty(numCols, row);
 	}
 
 	//Return remaining zombies
