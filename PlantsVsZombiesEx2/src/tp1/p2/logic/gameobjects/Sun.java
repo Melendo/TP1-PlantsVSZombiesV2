@@ -14,7 +14,6 @@ public class Sun extends GameObject {
 		super(game, x, y, HP);
 		this.hp = HP;
 		this.symbol = getSymbol();
-		onEnter();
 	}
 
 	@Override
