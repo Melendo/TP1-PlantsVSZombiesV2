@@ -4,9 +4,10 @@ import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
 public class CherryBomb extends Plant {
-	public static final int HP = 3;
-	public static final int COST = 50;
-	public static final int DMG = 1;
+	private static final int COST = 50;
+	private static final int HP = 3;
+	private static final int DMG = 10;
+	private static final int CYCLES = 2;
 	
 	protected final String name = Messages.CHERRY_BOMB_NAME;
 	protected final String symbol = Messages.CHERRY_BOMB_SYMBOL;

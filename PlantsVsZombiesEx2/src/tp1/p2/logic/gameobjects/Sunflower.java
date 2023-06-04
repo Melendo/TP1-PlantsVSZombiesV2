@@ -6,9 +6,11 @@ import tp1.p2.view.Messages;
 
 public class Sunflower extends Plant {
 
-	public static final int HP = 3;
-	public static final int COST = 50;
-	public static final int DMG = 1;
+	public static final int HP = 1;
+	public static final int COST = 20;
+	public static final int DMG = 0;
+	public static final int CD = 10;
+	public static final int CYCLES = 3;
 	
 	protected final String name = Messages.SUNFLOWER_NAME;
 	protected final String symbol = Messages.SUNFLOWER_SYMBOL;
