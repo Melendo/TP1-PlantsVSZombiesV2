@@ -91,5 +91,7 @@ public interface GameStatus {
 	
 	public boolean getPlayerWin();
 
+	public int getScore();
+
 
 }

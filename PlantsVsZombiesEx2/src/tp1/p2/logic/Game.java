@@ -43,6 +43,8 @@ public class Game implements GameStatus, GameWorld {
 	private boolean zombiesWin;
 	
 	private boolean playerWin;
+	
+	private int score;
 
 	//Constructor
 	public Game(long seed, Level level) {
@@ -72,6 +74,7 @@ public class Game implements GameStatus, GameWorld {
 		zombiesManager = new ZombiesManager(this, level, random);
 		container = new GameObjectContainer();
 		sunsManager = new SunsManager(this, random);
+		score = 0;
 	}
 
 	//Executes the game actions and update the game objects in the board.
@@ -233,7 +236,7 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public boolean canBuy(Plant plant) {
-		if(this.suncoins>plant.getCost()) {
+		if(this.suncoins >= plant.getCost()) {
 			subtractSuncoins(plant.getCost());
 			return true;
 		}
@@ -282,6 +285,17 @@ public class Game implements GameStatus, GameWorld {
 		
 		return container.isFullyOccupied(col, row);
 	}
+
+	@Override
+	public int getScore() {
+		return this.score;
+	}
+	
+	public void increaseScore(int i) {
+		this.score += i;
+	}
+
+	
 	
 	
 	
