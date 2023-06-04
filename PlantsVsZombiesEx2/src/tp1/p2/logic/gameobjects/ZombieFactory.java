@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
+import tp1.p2.view.Messages;
 
 public class ZombieFactory {
 
 	/* @formatter:off */
 	private static final List<Zombie> AVAILABLE_ZOMBIES = Arrays.asList(
-		new Zombie(),
+		new NormalZombie(),
 		new BucketHead(),
 		new Sporty(),
 		new ExplosiveZombie()
@@ -22,10 +24,11 @@ public class ZombieFactory {
 	}
 
 	public static Zombie spawnZombie(int zombieIdx, GameWorld game, int col, int row) {
-		if (isValidZombie(zombieIdx)) {
-			return AVAILABLE_ZOMBIES.get(zombieIdx).create(game, row);
+		if (!isValidZombie(zombieIdx)) {
+			//throw new GameException(Messages.INVALID_GAME_OBJECT);
 		}
-		return null;
+		Zombie z = AVAILABLE_ZOMBIES.get(zombieIdx);
+		return z.create(game, row);
 		
 	}
 

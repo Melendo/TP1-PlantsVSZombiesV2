@@ -87,4 +87,16 @@ public class Sunflower extends Plant {
 	public String getShortcut() {
 		return Messages.SUNFLOWER_NAME_SHORTCUT;
 	}
+
+	@Override
+	public void onEnter() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onExit() {
+		// TODO Auto-generated method stub
+		
+	}
 }

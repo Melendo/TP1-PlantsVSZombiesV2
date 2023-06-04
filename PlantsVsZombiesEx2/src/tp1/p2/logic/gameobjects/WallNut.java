@@ -9,18 +9,14 @@ public class WallNut extends Plant {
 	public static final int COST = 50;
 	public static final int DMG = 0;
 	
-	protected final String name = Messages.WALL_NUT_NAME;
-	protected final String symbol = Messages.WALL_NUT_SYMBOL;
-	
 	
 	public WallNut(GameWorld game, int col, int row) {
 		super(game, col, row, HP);
-		// TODO Auto-generated constructor stub
+		this.name = Messages.WALL_NUT_NAME;
+		this.symbol = Messages.WALL_NUT_SYMBOL;
 	}
 	
 	public WallNut() {
-		// TODO Auto-generated constructor stub
-		this.hp = HP;
 	}
 
 	public String getDescription() {
@@ -42,20 +38,17 @@ public class WallNut extends Plant {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return this.name;
+		return Messages.WALL_NUT_NAME;
 	}
 
 	@Override
 	public String getSymbol() {
-		// TODO Auto-generated method stub
-		return this.symbol;
+		return Messages.WALL_NUT_SYMBOL;
 	}
 
 	@Override
 	public int getCost() {
-		// TODO Auto-generated method stub
-		return this.COST;
+		return COST;
 	}
 
 	@Override
@@ -66,13 +59,12 @@ public class WallNut extends Plant {
 
 	@Override
 	public boolean receivePlantAttack(int damage) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean fillPosition() {
-		// TODO Auto-generated method stub
+		// TODO Auto-  stub
 		return false;
 	}
 
@@ -82,7 +74,18 @@ public class WallNut extends Plant {
 
 	@Override
 	public String getShortcut() {
-		// TODO Auto-generated method stub
 		return Messages.WALL_NUT_NAME_SHORTCUT;
+	}
+
+	@Override
+	public void onEnter() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onExit() {
+		// TODO Auto-generated method stub
+		
 	}
 }

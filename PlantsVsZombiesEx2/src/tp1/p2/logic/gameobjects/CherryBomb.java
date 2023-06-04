@@ -99,6 +99,18 @@ public class CherryBomb extends Plant {
 		return Messages.CHERRY_BOMB_NAME_SHORTCUT;
 	}
 
+	@Override
+	public void onEnter() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onExit() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 }

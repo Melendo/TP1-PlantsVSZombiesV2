@@ -4,22 +4,23 @@ import tp1.p2.logic.Game;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
-public class Sporty extends Zombie {
-	public static final int HP = 2;
+public class NormalZombie extends Zombie {
+
+	public static final int HP = 5;
 	public static final int DMG = 1;
-	public static final int SPEED= 1;
+	public static final int SPEED= 2;
 	
 	//Zombie Builder
-	public Sporty(GameWorld game, int row) {
+	public NormalZombie(GameWorld game, int row) {
 		super(game,Game.NUM_COLS + 1, row, HP);
-		this.name = Messages.SPORTY_ZOMBIE_NAME;
-		this.symbol = Messages.SPORTY_ZOMBIE_SYMBOL;
+		this.name = Messages.ZOMBIE_NAME;
+		this.symbol = Messages.ZOMBIE_SYMBOL;
 		this.cooldown = SPEED;
 		
 	}
 	
 	//Empty Zombie Builder
-	public Sporty() {
+	public NormalZombie() {
 		
 	}
 	
@@ -43,11 +44,11 @@ public class Sporty extends Zombie {
 
 	@Override
 	public String getSymbol() {
-		return Messages.SPORTY_ZOMBIE_SYMBOL;
+		return Messages.ZOMBIE_SYMBOL;
 	}
 	
 	public String getName() {
-		return Messages.SPORTY_ZOMBIE_NAME;
+		return Messages.ZOMBIE_NAME;
 	}
 
 	@Override
@@ -70,6 +71,7 @@ public class Sporty extends Zombie {
 			}
 			
 		}
+		
 	}
 
 	@Override
@@ -85,4 +87,5 @@ public class Sporty extends Zombie {
 	}
 	
 
+	
 }
