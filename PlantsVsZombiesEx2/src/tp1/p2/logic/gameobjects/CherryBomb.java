@@ -31,7 +31,7 @@ public class CherryBomb extends Plant {
 	@Override
 	public Plant create(GameWorld game, int col, int row) {
 		// TODO Auto-generated method stub
-		return new Peashooter(game, col, row);
+		return new CherryBomb(game, col, row);
 	}
 
 	@Override
