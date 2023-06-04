@@ -23,14 +23,30 @@ public class ExplosionAction implements GameAction {
 	public void execute(GameWorld game) {
 		
 		if(cherry) {
-			game.attackZombie(col - 1, row, damage);
-			game.attackZombie(col - 1, row + 1, damage);
-			game.attackZombie(col, row + 1, damage);
-			game.attackZombie(col + 1, row + 1, damage);
-			game.attackZombie(col + 1, row, damage);
-			game.attackZombie(col + 1, row - 1, damage);
-			game.attackZombie(col, row - 1, damage);
-			game.attackZombie(col - 1, row - 1, damage);
+			if(game.attackZombie(col - 1, row, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col - 1, row + 1, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col, row + 1, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col + 1, row + 1, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col + 1, row, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col + 1, row - 1, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col, row - 1, damage)) {
+				game.increaseScore(10);
+			}
+			if(game.attackZombie(col - 1, row - 1, damage)) {
+				game.increaseScore(10);
+			}
 		} else {
 			game.attackPlant(col - 1, row, damage);
 			game.attackPlant(col - 1, row + 1, damage);
