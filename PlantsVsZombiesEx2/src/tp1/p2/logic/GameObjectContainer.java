@@ -76,7 +76,7 @@ public class GameObjectContainer {
 	public boolean zombieArrived() {
 		
 		for(GameObject go : gameObjects) {
-			if(go.isNPC() && go.getCol() == -1) {
+			if(go.isEntity() && go.getCol() == -1) {
 				return true;
 			}
 		}
@@ -85,7 +85,7 @@ public class GameObjectContainer {
 	
 	public boolean allZombiesDied() {
 		for(GameObject go : gameObjects) {
-			if(go.isNPC()) {
+			if(go.isEntity()) {
 				return false;
 			}
 		}

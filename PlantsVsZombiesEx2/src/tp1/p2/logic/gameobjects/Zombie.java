@@ -107,7 +107,7 @@ public class Zombie extends GameObject {
 		
 	}
 	@Override
-	public boolean isNPC() {
+	public boolean isEntity() {
 		return true;
 	}
 

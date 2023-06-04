@@ -95,5 +95,6 @@ public class Peashooter extends Plant {
 		// TODO Auto-generated method stub
 		return Messages.PEASHOOTER_NAME_SHORTCUT;
 	}
+
 	
 }

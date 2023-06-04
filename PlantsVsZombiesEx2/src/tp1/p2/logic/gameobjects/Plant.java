@@ -24,7 +24,7 @@ public abstract class Plant extends GameObject{
 	abstract public Plant copy(GameWorld game, int col, int row); 
 	
 	@Override
-	public boolean isNPC() {
+	public boolean isEntity() {
 		return false;
 	}
 	

@@ -94,5 +94,7 @@ public class CherryBomb extends Plant {
 		// TODO Auto-generated method stub
 		return Messages.CHERRY_BOMB_NAME_SHORTCUT;
 	}
+
+
 	
 }

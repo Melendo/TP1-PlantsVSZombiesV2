@@ -40,6 +40,6 @@ public interface GameItem {
 	 */
 	boolean catchObject();
 	
-	boolean isNPC();
+	boolean isEntity();
 
 }

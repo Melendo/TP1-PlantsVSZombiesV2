@@ -14,9 +14,9 @@ public class SunsManager {
 
 	private int cooldown;
 	
-	private int catchedSuns;
+	private static int catchedSuns;
 	
-	private int generatedSuns;
+	private static int generatedSuns;
 
 	public SunsManager(GameWorld game, Random rand) {
 		this.game = game;
@@ -51,5 +51,17 @@ public class SunsManager {
 		int col = getRandomInt(GameWorld.NUM_COLS);
 		int row = getRandomInt(GameWorld.NUM_ROWS);
 		game.addItem(new Sun(this.game, col, row));
+	}
+	
+	public static void addCatchedSun() {
+		catchedSuns++;
+	}
+	
+	public static void addGenSun() {
+		generatedSuns++;
+	}
+	
+	public static void removeGenSun() {
+		generatedSuns--;
 	}
 }

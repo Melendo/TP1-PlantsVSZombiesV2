@@ -23,7 +23,7 @@ public class Sun extends GameObject {
 	public boolean catchObject() {
 		this.hp = 0;
 		this.game.addSun(10);
-		//SunsManager.setCatchedSuns(SunsManager.getCatchedSuns()+1);
+		SunsManager.addCatchedSun();
 		return true;
 	}
 
@@ -77,12 +77,11 @@ public class Sun extends GameObject {
 
 	@Override
 	public void onExit() {
-		//SunsManager.setGeneratedSuns(SunsManager.getGeneratedSuns()-1);
-		
+		SunsManager.removeGenSun();
 	}
 	
 	@Override
-	public boolean isNPC() {
+	public boolean isEntity() {
 		return false;
 	}
 
