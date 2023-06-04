@@ -1,14 +1,12 @@
 package tp1.p2.control.commands;
 
 import tp1.p2.control.Command;
-import tp1.p2.control.ExecutionResult;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
 public class NoneCommand extends Command {
 
 	public NoneCommand() {
-		// default command
 		super(true);
 	}
 
@@ -34,7 +32,6 @@ public class NoneCommand extends Command {
 
 	@Override
 	public boolean execute(GameWorld game) {
-		// TODO add your code here
 		game.update();
 		return true;
 	}
