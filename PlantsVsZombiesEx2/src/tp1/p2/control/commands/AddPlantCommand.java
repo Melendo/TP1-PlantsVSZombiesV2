@@ -39,12 +39,12 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	protected String getName() {
-		return Messages.COMMAND_ADD_NAME;
+		return Messages.COMMAND_CHEAT_PLANT_NAME;
 	}
 
 	@Override
 	protected String getShortcut() {
-		return Messages.COMMAND_ADD_SHORTCUT;
+		return Messages.COMMAND_CHEAT_PLANT_SHORTCUT;
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	public String getHelp() {
-		return Messages.COMMAND_ADD_HELP;
+		return Messages.COMMAND_CHEAT_PLANT_HELP;
 	}
 
 

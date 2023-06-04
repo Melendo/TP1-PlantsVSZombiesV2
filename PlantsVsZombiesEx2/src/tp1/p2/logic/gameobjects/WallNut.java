@@ -5,9 +5,9 @@ import tp1.p2.view.Messages;
 
 public class WallNut extends Plant {
 
-	public static final int HP = 3;
+	public static final int HP = 10;
 	public static final int COST = 50;
-	public static final int DMG = 1;
+	public static final int DMG = 0;
 	
 	protected final String name = Messages.WALL_NUT_NAME;
 	protected final String symbol = Messages.WALL_NUT_SYMBOL;
