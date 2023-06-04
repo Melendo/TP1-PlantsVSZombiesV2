@@ -24,7 +24,7 @@ public class Peashooter extends Plant {
 	}
 
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
 		return str ;
 	}
 
@@ -57,13 +57,7 @@ public class Peashooter extends Plant {
 		// TODO Auto-generated method stub
 		return this.COST;
 	}
-
-	@Override
-	public Plant copy(GameWorld game, int col, int row) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public boolean receivePlantAttack(int damage) {
 		// TODO Auto-generated method stub

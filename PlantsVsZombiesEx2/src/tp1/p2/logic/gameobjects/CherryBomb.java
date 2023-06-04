@@ -11,68 +11,53 @@ public class CherryBomb extends Plant {
 	private static final int DMG = 10;
 	private static final int CYCLES = 3;
 	
-	protected final String name = Messages.CHERRY_BOMB_NAME;
 	protected String symbol = Messages.CHERRY_BOMB_SYMBOL;
 	
-	private int fuse = this.CYCLES;
+	private int fuse ;
 	
 	
 	
 	public CherryBomb(GameWorld game, int col, int row) {
 		super(game, col, row, HP);
-		// TODO Auto-generated constructor stub
+		this.name = Messages.CHERRY_BOMB_NAME;
+		this.fuse = CYCLES;
 	}
 	
-	public CherryBomb() {
-		// TODO Auto-generated constructor stub
-		this.hp = HP;
-	}
-
-	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
-		return str ;
-	}
+	public CherryBomb() {}
 
 	@Override
 	public Plant create(GameWorld game, int col, int row) {
-		// TODO Auto-generated method stub
 		return new CherryBomb(game, col, row);
 	}
 
+	public String getDescription() {
+		String str = String.format(Messages.PLANT_DESCRIPTION, this.name,  COST, DMG, HP);
+		return str ;
+	}
+	
 	@Override
 	public int getCooldown() {
-		// TODO Auto-generated method stub
 		return this.cooldown;
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return this.name;
+		return Messages.CHERRY_BOMB_NAME;
+	}
+	
+	@Override
+	public String getShortcut() {
+		return Messages.CHERRY_BOMB_NAME_SHORTCUT;
 	}
 
 	@Override
 	public String getSymbol() {
-		// TODO Auto-generated method stub
 		return this.symbol;
 	}
 
 	@Override
 	public int getCost() {
-		// TODO Auto-generated method stub
-		return this.COST;
-	}
-
-	@Override
-	public Plant copy(GameWorld game, int col, int row) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean receivePlantAttack(int damage) {
-		// TODO Auto-generated method stub
-		return false;
+		return COST;
 	}
 
 	@Override
@@ -87,11 +72,7 @@ public class CherryBomb extends Plant {
 		}
 	}
 
-	@Override
-	public String getShortcut() {
-		// TODO Auto-generated method stub
-		return Messages.CHERRY_BOMB_NAME_SHORTCUT;
-	}
+
 
 	@Override
 	public void onEnter() {

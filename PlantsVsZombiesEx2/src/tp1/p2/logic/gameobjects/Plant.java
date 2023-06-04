@@ -44,6 +44,5 @@ public abstract class Plant extends GameObject{
 	
 	public abstract int getCost();
 	
-	abstract public Plant copy(GameWorld game, int col, int row); 
 
 }

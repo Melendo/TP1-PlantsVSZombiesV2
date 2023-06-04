@@ -19,8 +19,9 @@ public class WallNut extends Plant {
 	public WallNut() {
 	}
 
+	@Override
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
 		return str ;
 	}
 
@@ -49,12 +50,6 @@ public class WallNut extends Plant {
 	@Override
 	public int getCost() {
 		return COST;
-	}
-
-	@Override
-	public Plant copy(GameWorld game, int col, int row) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

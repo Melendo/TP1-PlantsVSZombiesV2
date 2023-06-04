@@ -24,7 +24,7 @@ public class Sunflower extends Plant {
 	}
 
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
 		return str ;
 	}
 
@@ -51,11 +51,6 @@ public class Sunflower extends Plant {
 	@Override
 	public int getCost() {
 		return COST;
-	}
-
-	@Override
-	public Plant copy(GameWorld game, int col, int row) {
-		return null;
 	}
 
 	@Override
