@@ -21,8 +21,25 @@ public class ExplosionAction implements GameAction {
 
 	@Override
 	public void execute(GameWorld game) {
-		int c  = col - 1;
-		int r = row;
+		if(cherry) {
+			game.attackZombie(damage, row, col - 1);
+			game.attackZombie(damage, row + 1, col - 1);
+			game.attackZombie(damage, row + 1, col);
+			game.attackZombie(damage, row + 1, col + 1);
+			game.attackZombie(damage, row, col + 1);
+			game.attackZombie(damage, row - 1, col + 1);
+			game.attackZombie(damage, row - 1, col);
+			game.attackZombie(damage, row - 1, col - 1);
+		} else {
+			game.attackPlant(damage, row, col - 1);
+			game.attackPlant(damage, row + 1, col - 1);
+			game.attackPlant(damage, row + 1, col);
+			game.attackPlant(damage, row + 1, col + 1);
+			game.attackPlant(damage, row, col + 1);
+			game.attackPlant(damage, row - 1, col + 1);
+			game.attackPlant(damage, row - 1, col);
+			game.attackPlant(damage, row - 1, col - 1);
+		}
 
 	}
 
