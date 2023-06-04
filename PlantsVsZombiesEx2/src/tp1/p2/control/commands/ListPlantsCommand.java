@@ -34,7 +34,6 @@ public class ListPlantsCommand extends Command {
 	public boolean execute(GameWorld game) throws GameException{
 		System.out.println(Messages.AVAILABLE_PLANTS);
 		for(Plant p: PlantFactory.getAvailablePlants()) {
-			System.out.println(p.getName());
 			System.out.println(p.getDescription());
 		}
 
