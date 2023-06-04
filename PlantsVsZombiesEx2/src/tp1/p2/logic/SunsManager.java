@@ -14,6 +14,8 @@ public class SunsManager {
 
 	private int cooldown;
 	
+	private int sunsToGen;
+	
 	private static int catchedSuns;
 	
 	private static int generatedSuns;
@@ -22,6 +24,7 @@ public class SunsManager {
 		this.game = game;
 		this.rand = rand;
 		this.cooldown = COOLDOWN_RANDOM_SUN;
+		this.sunsToGen = 0;
 		catchedSuns = 0;
 		generatedSuns = 0;
 	}
@@ -35,6 +38,12 @@ public class SunsManager {
 	}
 
 	public void update() {
+		
+		for(int i = 0;i<this.sunsToGen;i++) {
+			addSun();
+		}
+		this.sunsToGen = 0;
+		
 		if (cooldown == 0) {
 			addSun();
 			cooldown = COOLDOWN_RANDOM_SUN;
@@ -53,6 +62,10 @@ public class SunsManager {
 		game.addItem(new Sun(this.game, col, row));
 	}
 	
+	public void addSunToGen() {
+		this.sunsToGen++;
+	}
+	
 	public static void addCatchedSun() {
 		catchedSuns++;
 	}
@@ -64,4 +77,5 @@ public class SunsManager {
 	public static void removeGenSun() {
 		generatedSuns--;
 	}
+	
 }
