@@ -33,6 +33,8 @@ public abstract class Zombie extends GameObject {
 		return true;
 	}
 	
+	
+	
 	public abstract Zombie create(GameWorld game, int row);
 	
 	public abstract String getSymbol();

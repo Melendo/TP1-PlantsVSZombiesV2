@@ -45,6 +45,8 @@ public interface GameWorld {
 	
 	public boolean hasPositionEntity(int col, int row);
 
+	void increaseScore(int i);
+
 
 		
 

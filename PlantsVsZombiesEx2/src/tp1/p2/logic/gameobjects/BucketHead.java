@@ -79,6 +79,7 @@ public class BucketHead extends Zombie {
 	@Override
 	public void onExit() {
 		// TODO Auto-generated method stub
+		game.increaseScore(10);
 		
 	}
 	

@@ -85,6 +85,7 @@ public class ExplosiveZombie extends Zombie {
 		System.out.println("KABOOOM");
 		GameAction explosion = new ExplosionAction(col, row, 3, false);
         explosion.execute(game);
+        game.increaseScore(10);
 	}
 	
 	

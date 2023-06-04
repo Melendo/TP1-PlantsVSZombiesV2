@@ -291,6 +291,7 @@ public class Game implements GameStatus, GameWorld {
 		return this.score;
 	}
 	
+	@Override
 	public void increaseScore(int i) {
 		this.score += i;
 	}

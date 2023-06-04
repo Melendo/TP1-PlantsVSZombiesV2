@@ -109,6 +109,7 @@ public class CherryBomb extends Plant {
 	public void onExit() {
 		// TODO Auto-generated method stub
 		
+		
 	}
 
 
