@@ -58,7 +58,7 @@ public class GameObjectContainer {
 		}
 	}
 
-	public boolean isFullyOccupied(int col, int row) {
+	public boolean hasPositionEntity(int col, int row) {
 	
 		for(GameObject go : gameObjects) {
 			if (go.isAlive() && go.isInPosition(col, row) && go.isEntity()) {

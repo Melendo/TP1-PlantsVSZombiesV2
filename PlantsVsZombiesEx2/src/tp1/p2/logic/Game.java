@@ -1,20 +1,15 @@
 package tp1.p2.logic;
 
-import static tp1.p2.view.Messages.error;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.List;
 import java.util.Random;
 
 import tp1.p2.control.Command;
-import tp1.p2.control.ExecutionResult;
 import tp1.p2.control.Level;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.actions.GameAction;
 import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.logic.gameobjects.Plant;
-import tp1.p2.view.Messages;
 
 public class Game implements GameStatus, GameWorld {
 	
@@ -82,7 +77,7 @@ public class Game implements GameStatus, GameWorld {
 	public void update() {
 
 		// 1. Execute pending actions
-		executePendingActions(); //this.actions is null
+		executePendingActions();
 
 		// 2. Execute game Actions
 		// TODO add your code here
@@ -123,26 +118,26 @@ public class Game implements GameStatus, GameWorld {
 		return this.actions.size() > 0;
 	}
 
-	@Override
 	//Return if player quited the game
+	@Override
 	public boolean isPlayerQuits() {
 		return this.quits;
 	}
 	
-	@Override
 	//Return if zombies won the game
+	@Override
 	public boolean getZombiesWin() {
 		return this.zombiesWin;
 	}
 	
-	@Override
 	//Return if player won the game
+	@Override
 	public boolean getPlayerWin() {
 		return this.playerWin;
 	}
 
-	@Override
 	//Return true if the game ended
+	@Override
 	public boolean isFinished() {
 		boolean resul = false;
 		if(container.zombieArrived()) {
@@ -165,7 +160,7 @@ public class Game implements GameStatus, GameWorld {
 		this.suncoins += numSol;
 	}
 
-	//Try to catch
+	//Try to catch a sun
 	@Override
 	public boolean tryToCatchObject(int col, int row) {
 		return container.tryToCatchObject(col, row);
@@ -208,13 +203,13 @@ public class Game implements GameStatus, GameWorld {
 	//Return the Gen Suns
 	@Override
 	public int getGeneratedSuns() {
-		return sunsManager.getGeneratedSuns();
+		return SunsManager.getGeneratedSuns();
 	}
 
 	//Return Caught Suns
 	@Override
 	public int getCaughtSuns() {
-		return sunsManager.getCatchedSuns();
+		return SunsManager.getCatchedSuns();
 	}
 
 	//Executes a specific command given
@@ -228,6 +223,7 @@ public class Game implements GameStatus, GameWorld {
 		this.suncoins -= x;
 	}
 
+	//Return true if you buy the plant and substract the sc
 	@Override
 	public boolean canBuy(Plant plant) {
 		if(this.suncoins >= plant.getCost()) {
@@ -275,7 +271,7 @@ public class Game implements GameStatus, GameWorld {
 	
 	@Override
 	public boolean hasPositionEntity(int col, int row) {
-		return container.isFullyOccupied(col, row);
+		return container.hasPositionEntity(col, row);
 	}
 
 	@Override
