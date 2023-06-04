@@ -235,8 +235,11 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public boolean canBuy(Plant plant) {
-		// TODO Auto-generated method stub
-		return true;
+		if(this.suncoins>plant.getCost()) {
+			this.suncoins--;
+			return true;
+		}
+		return false;
 	}
 
 	@Override
