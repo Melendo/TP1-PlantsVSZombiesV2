@@ -236,7 +236,7 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public boolean canBuy(Plant plant) {
 		if(this.suncoins>plant.getCost()) {
-			this.suncoins--;
+			this.suncoins -= plant.getCost();
 			return true;
 		}
 		return false;
