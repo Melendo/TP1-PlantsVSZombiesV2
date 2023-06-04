@@ -16,7 +16,8 @@ public class RecordGame {
 	private int score[];
 	private int cont;
 	BufferedWriter writeFile;
-	private static final String FILE_MSG = "Archivo corrupto";
+	public static final String FILE_MSG = "Archivo corrupto";
+	public static final String RUTA_DATOS= "C:\\\\Users\\\\Robert\\\\Documents\\\\GitHub\\\\PlantsVSZombiesV2-1\\\\PlantsVsZombiesEx2\\\\records.txt";
 	
 	public RecordGame() {
 		level = new String[3];
@@ -28,7 +29,7 @@ public class RecordGame {
 	public void readFile() throws CommandParseException{
 		try {
     		String s = "";
-	    	BufferedReader readFile = new BufferedReader(new FileReader("C:\\Users\\Robert\\Documents\\GitHub\\PlantsVSZombiesV2-1\\PlantsVsZombiesEx2\\records.txt"));
+	    	BufferedReader readFile = new BufferedReader(new FileReader(RUTA_DATOS));
 	    	while ((s = readFile.readLine()) != null && cont < level.length) {
 				String[] parts = s.split(":", 2);
 				level[cont]=parts[0];
@@ -65,7 +66,7 @@ public class RecordGame {
 	
 	public void save() throws RecordException {
 		try {
-        	writeFile = new BufferedWriter(new FileWriter("C:\\Users\\Robert\\Documents\\GitHub\\PlantsVSZombiesV2-1\\PlantsVsZombiesEx2\\\\records.txt", false));
+        	writeFile = new BufferedWriter(new FileWriter(RUTA_DATOS, false));
         	for (int i = 0; i < cont; i++) {
         		writeFile.write(level[i] + ":" + score[i] + "\n");
         	}
