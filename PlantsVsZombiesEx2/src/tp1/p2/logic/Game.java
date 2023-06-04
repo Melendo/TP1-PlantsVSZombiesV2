@@ -40,6 +40,8 @@ public class Game implements GameStatus, GameWorld {
 	private boolean playerWin;
 	
 	private int score;
+	
+	private RecordGame record;
 
 	//Constructor
 	public Game(long seed, Level level) {
@@ -47,6 +49,7 @@ public class Game implements GameStatus, GameWorld {
 		this.level = level;
 		this.container = new GameObjectContainer();
 		reset();
+		record = new RecordGame(this);
 	}
 
 	//Resets the game.
@@ -150,6 +153,14 @@ public class Game implements GameStatus, GameWorld {
 		}
 		else {
 			resul = isPlayerQuits();
+		}
+		if(resul) {
+			if(record.getRecord(level.toString()) < score) {
+				System.out.println("NEW RECORD");
+				record.newRecord(level.toString(), score);
+			} else {
+				System.out.println("GG");
+			}
 		}
 		return resul;
 	}
