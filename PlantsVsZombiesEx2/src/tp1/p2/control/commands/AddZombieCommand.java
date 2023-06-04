@@ -1,13 +1,10 @@
 package tp1.p2.control.commands;
 
-import static tp1.p2.view.Messages.error;
 
 import tp1.p2.control.Command;
-import tp1.p2.control.ExecutionResult;
 import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
-import tp1.p2.logic.gameobjects.Zombie;
 import tp1.p2.logic.gameobjects.ZombieFactory;
 import tp1.p2.view.Messages;
 
@@ -23,7 +20,7 @@ public class AddZombieCommand extends Command implements Cloneable {
 		
 	}
 
-	private AddZombieCommand(int zombieIdx, int col, int row) {
+	public AddZombieCommand(int zombieIdx, int col, int row) {
 		this.zombieIdx = zombieIdx;
 		this.col = col;
 		this.row = row;
@@ -74,7 +71,6 @@ public class AddZombieCommand extends Command implements Cloneable {
 		} else throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
 		
 		return command;
-		// TODO add your code here
 	}
 
 }

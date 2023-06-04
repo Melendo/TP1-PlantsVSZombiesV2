@@ -1,14 +1,11 @@
 package tp1.p2.control.commands;
 
-import static tp1.p2.view.Messages.error;
 
 import tp1.p2.control.Command;
-import tp1.p2.control.ExecutionResult;
 import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.exceptions.NotEnoughCoinsException;
 import tp1.p2.logic.GameWorld;
-import tp1.p2.logic.gameobjects.Plant;
 import tp1.p2.logic.gameobjects.PlantFactory;
 import tp1.p2.view.Messages;
 
@@ -20,14 +17,9 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	private String plantName;
 
-	private boolean consumeCoins;
 
 	public AddPlantCommand() {
-		this(true);
-	}
-
-	public AddPlantCommand(boolean consumeCoins) {
-		this.consumeCoins = consumeCoins;
+		
 	}
 
 	public AddPlantCommand(String plantName, int col, int row) {

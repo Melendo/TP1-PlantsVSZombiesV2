@@ -1,15 +1,10 @@
 package tp1.p2.control.commands;
 
-import static tp1.p2.view.Messages.error;
-
 import tp1.p2.control.Command;
-import tp1.p2.control.ExecutionResult;
-import tp1.p2.exceptions.CommandExecuteException;
 import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.exceptions.NotCatchablePositionException;
 import tp1.p2.logic.GameWorld;
-import tp1.p2.logic.gameobjects.PlantFactory;
 import tp1.p2.view.Messages;
 
 
@@ -59,7 +54,7 @@ public class CatchCommand extends Command implements Cloneable{
 	
 	@Override
 	public Command create(String[] parameters) throws GameException{
-		// TODO add your code here
+		
 		Command command = null;
 		try {
 			if(parameters.length == 3) {
