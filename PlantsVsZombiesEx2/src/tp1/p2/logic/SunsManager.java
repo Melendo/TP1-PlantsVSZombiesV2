@@ -22,16 +22,16 @@ public class SunsManager {
 		this.game = game;
 		this.rand = rand;
 		this.cooldown = COOLDOWN_RANDOM_SUN;
-		this.catchedSuns = 0;
-		this.generatedSuns = 0;
+		catchedSuns = 0;
+		generatedSuns = 0;
 	}
 
-	public int getCatchedSuns() {
-		return this.catchedSuns;
+	public static int getCatchedSuns() {
+		return catchedSuns;
 	}
 
-	public int getGeneratedSuns() {
-		return this.generatedSuns;
+	public static int getGeneratedSuns() {
+		return generatedSuns;
 	}
 
 	public void update() {
@@ -58,7 +58,7 @@ public class SunsManager {
 	}
 	
 	public static void addGenSun() {
-		generatedSuns++;
+		generatedSuns ++;
 	}
 	
 	public static void removeGenSun() {

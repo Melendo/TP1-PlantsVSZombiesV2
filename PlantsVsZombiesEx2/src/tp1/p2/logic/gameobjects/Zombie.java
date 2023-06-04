@@ -21,10 +21,6 @@ public abstract class Zombie extends GameObject {
 		return true;
 	}
 	
-	public boolean fillPosition() {
-		return true;
-	}
-	
 	public boolean catchObject() {
 		return false;
 	}

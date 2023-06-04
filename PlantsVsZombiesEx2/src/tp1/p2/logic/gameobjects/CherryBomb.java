@@ -76,12 +76,6 @@ public class CherryBomb extends Plant {
 	}
 
 	@Override
-	public boolean fillPosition() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public void update() {
 		fuse--;
 		if(fuse < 0) {

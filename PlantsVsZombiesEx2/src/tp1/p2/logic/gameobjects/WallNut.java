@@ -63,12 +63,6 @@ public class WallNut extends Plant {
 	}
 
 	@Override
-	public boolean fillPosition() {
-		// TODO Auto-  stub
-		return false;
-	}
-
-	@Override
 	public void update() {
 	}
 

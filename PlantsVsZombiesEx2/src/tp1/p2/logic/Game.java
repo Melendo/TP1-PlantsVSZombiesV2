@@ -265,7 +265,6 @@ public class Game implements GameStatus, GameWorld {
 
 	@Override
 	public boolean attackZombie(int i, int row, int dmg) {
-		// TODO Auto-generated method stub
 		return this.container.attackZombie(i, row, dmg);
 	}
 	

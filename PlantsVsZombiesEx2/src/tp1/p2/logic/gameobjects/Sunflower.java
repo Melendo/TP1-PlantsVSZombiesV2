@@ -64,11 +64,6 @@ public class Sunflower extends Plant {
 	}
 
 	@Override
-	public boolean fillPosition() {
-		return false;
-	}
-
-	@Override
 	public void update() {
 		if(isAlive()) {
 			if(cooldown == 1) {

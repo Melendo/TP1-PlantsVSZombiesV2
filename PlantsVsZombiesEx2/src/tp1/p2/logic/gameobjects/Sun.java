@@ -7,15 +7,13 @@ import tp1.p2.view.Messages;
 
 public class Sun extends GameObject {
 	
-	public static final int HP = 3;
-	public static final int SUN_COOLDOWN = 10+1;
+	public static final int HP = 10;
 	
 	//Builder
 	public Sun(GameWorld game, int x, int y) {
 		super(game, x, y, HP);
-		cooldown = SUN_COOLDOWN;
+		this.hp = HP;
 		this.symbol = getSymbol();
-		this.name = getSymbol();
 		onEnter();
 	}
 
@@ -25,11 +23,6 @@ public class Sun extends GameObject {
 		this.game.addSun(10);
 		SunsManager.addCatchedSun();
 		return true;
-	}
-
-	@Override
-	public boolean fillPosition() {
-		return false;
 	}
 
 	@Override
@@ -59,9 +52,8 @@ public class Sun extends GameObject {
 
 	@Override
 	public void update() {
-		this.cooldown--;
-		if(cooldown == 0) {
-			this.hp = 0;
+		this.hp--;
+		if(hp == 0) {
 			onExit();
 		}
 		
@@ -69,13 +61,12 @@ public class Sun extends GameObject {
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
+		SunsManager.addGenSun();
 		
 	}
 
 	@Override
 	public void onExit() {
-		SunsManager.removeGenSun();
 	}
 	
 	@Override
