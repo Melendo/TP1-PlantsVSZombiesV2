@@ -7,12 +7,17 @@ import tp1.p2.view.Messages;
 
 public class Sun extends GameObject {
 	
-	public Sun(GameWorld game, int col, int row) {
-		
-	}
-
-	// Remember that a Sun is updated the very same cycle is added to the container
+	public static final int HP = 3;
 	public static final int SUN_COOLDOWN = 10+1;
+	
+	//Builder
+	public Sun(GameWorld game, int x, int y) {
+		super(game, x, y, HP);
+		cooldown = SUN_COOLDOWN;
+		this.symbol = getSymbol();
+		this.name = getSymbol();
+		onEnter();
+	}
 
 	@Override
 	public boolean catchObject() {

@@ -13,22 +13,25 @@ public class SunsManager {
 	private Random rand;
 
 	private int cooldown;
+	
+	private int catchedSuns;
+	
+	private int generatedSuns;
 
 	public SunsManager(GameWorld game, Random rand) {
 		this.game = game;
 		this.rand = rand;
 		this.cooldown = COOLDOWN_RANDOM_SUN;
-		// TODO add your code here
+		this.catchedSuns = 0;
+		this.generatedSuns = 0;
 	}
 
 	public int getCatchedSuns() {
-		return cooldown;
-		// TODO add your code here
+		return this.catchedSuns;
 	}
 
 	public int getGeneratedSuns() {
-		return cooldown;
-		// TODO add your code here
+		return this.generatedSuns;
 	}
 
 	public void update() {
