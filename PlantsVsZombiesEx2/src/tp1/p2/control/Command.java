@@ -36,8 +36,9 @@ public abstract class Command {
 		new NoneCommand(),
 		new ListZombiesCommand(),
 		new AddZombieCommand(),
-		new AddPlantCheatCommand(),
+		//new AddPlantCheatCommand(),
 		new CatchCommand()
+		
 	);
 	/* @formatter:on */
 
@@ -50,13 +51,11 @@ public abstract class Command {
 		}
 
 		for (Command command : AVAILABLE_COMMANDS) {
-			System.out.println("Comprobando " + command.getName());
-			if (command.matchCommand(commandWords[0])) {
-				System.out.println("El comando introducido es: " + command.getName());
+			if (command.matchCommand(commandWords[0])) {	
 				return command.create(commandWords);
 			}
 		}
-		System.out.println(error(Messages.UNKNOWN_COMMAND)); //se crashea sin más
+		System.out.println(error(Messages.UNKNOWN_COMMAND)); //se crashea al llegar a add plant cheat
 		return null;
 	}
 
