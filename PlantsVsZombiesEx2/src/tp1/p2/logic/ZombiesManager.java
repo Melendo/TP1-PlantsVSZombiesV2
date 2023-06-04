@@ -3,6 +3,7 @@ package tp1.p2.logic;
 import java.util.Random;
 
 import tp1.p2.control.Level;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.gameobjects.Zombie;
 import tp1.p2.logic.gameobjects.ZombieFactory;
 
@@ -67,7 +68,13 @@ public class ZombiesManager {
 		}
 		
 		if (canAdd) {
-			Zombie z = ZombieFactory.spawnZombie(zombieType, game, GameWorld.NUM_COLS, row);
+			Zombie z = null;
+			try {
+				z = ZombieFactory.spawnZombie(zombieType, game, GameWorld.NUM_COLS, row);
+			} catch (GameException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			remainingZombies--;
 			game.addItem(z);
 			

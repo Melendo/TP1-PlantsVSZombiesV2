@@ -23,9 +23,9 @@ public class ZombieFactory {
 		return zombieIdx >= 0 && zombieIdx < AVAILABLE_ZOMBIES.size();
 	}
 
-	public static Zombie spawnZombie(int zombieIdx, GameWorld game, int col, int row) {
+	public static Zombie spawnZombie(int zombieIdx, GameWorld game, int col, int row) throws GameException {
 		if (!isValidZombie(zombieIdx)) {
-			//throw new GameException(Messages.INVALID_GAME_OBJECT);
+			throw new GameException(Messages.INVALID_GAME_OBJECT);
 		}
 		Zombie z = AVAILABLE_ZOMBIES.get(zombieIdx);
 		return z.create(game, row);
