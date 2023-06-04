@@ -50,10 +50,10 @@ public class GamePrinter {
 		/* @formatter:on */
 		
 		if(game.getCycle() == 0) {
-			return String.format(Messages.CONFIGURED_LEVEL, game.getLevel()) + "\n" + String.format(Messages.CONFIGURED_SEED, game.getSeed()) + "\n" + Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + "\n" + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + "\n" + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + "\n" + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + "\n" + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + "\n"  + "Score: " + game.getScore() + "\n" ;
+			return String.format(Messages.CONFIGURED_LEVEL, game.getLevel()) + NEW_LINE + String.format(Messages.CONFIGURED_SEED, game.getSeed()) + NEW_LINE + Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + NEW_LINE + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + NEW_LINE + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + NEW_LINE + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + NEW_LINE + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + NEW_LINE  + "Score: " + game.getScore() + NEW_LINE ;
 		}
 		else {
-			return Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + "\n" + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + "\n" + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + "\n"  + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + "\n" + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + "\n"  + "Score: " + game.getScore() + "\n";
+			return Messages.NUMBER_OF_CYCLES + " " + game.getCycle() + NEW_LINE + Messages.NUMBER_OF_COINS + " " + game.getSuncoins() + NEW_LINE + Messages.REMAINING_ZOMBIES + " " + game.getRemainingZombies() + NEW_LINE  + Messages.GENERATED_SUNS + " " + game.getGeneratedSuns() + NEW_LINE + Messages.CAUGHT_SUNS + " " + game.getCaughtSuns() + NEW_LINE  + "Score: " + game.getScore() + NEW_LINE;
 		}
 	}
 
