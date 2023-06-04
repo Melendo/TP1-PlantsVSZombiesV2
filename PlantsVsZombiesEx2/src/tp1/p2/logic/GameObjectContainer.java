@@ -46,7 +46,6 @@ public class GameObjectContainer {
 			}
 		}
 		return false;
-		// TODO add your code here
 	}
 
 	public void update() {
@@ -81,7 +80,7 @@ public class GameObjectContainer {
 	
 	public boolean allZombiesDied() {
 		for(GameObject go : gameObjects) {
-			if(go.isEntity()) {
+			if(go.isZombie() && go.isAlive()) {
 				return false;
 			}
 		}

@@ -88,4 +88,7 @@ public abstract class GameObject implements GameItem {
 	abstract public void onEnter();
 	
 	abstract public void onExit();
+
+	abstract public boolean isZombie();
+	
 }

@@ -43,9 +43,13 @@ public interface GameWorld {
 	
 	public boolean hasPositionEntity(int col, int row);
 
-	void increaseScore(int i);
+	public void increaseScore(int i);
 
-	String getRecord() throws CommandParseException;
+	public String getRecord() throws CommandParseException;
+
+	public boolean checkPlayerVictory();
+	
+	
 
 
 		

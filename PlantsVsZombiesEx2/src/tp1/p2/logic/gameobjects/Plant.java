@@ -34,6 +34,11 @@ public abstract class Plant extends GameObject{
 		return true;
 	}
 	
+	@Override
+	public boolean isZombie() {
+		return false;
+	}
+	
 	public abstract Plant create(GameWorld game, int col, int row);
 	
 	public abstract String getName();
