@@ -1,6 +1,5 @@
 package tp1.p2.logic.gameobjects;
 
-import tp1.p2.logic.Game;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.view.Messages;
 
@@ -24,24 +23,24 @@ public class Sunflower extends Plant {
 	}
 
 	@Override
+	public Plant create(GameWorld game, int col, int row) {
+		return new Sunflower(game, col, row);
+	}
+	
+	@Override
 	public String getDescription() {
 		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
 		return str ;
 	}
 
 	@Override
-	public Plant create(GameWorld game, int col, int row) {
-		return new Sunflower(game, col, row);
-	}
-
-	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
-
-	@Override
 	public String getName() {
 		return Messages.SUNFLOWER_NAME;
+	}
+
+	@Override
+	public String getShortcut() {
+		return Messages.SUNFLOWER_NAME_SHORTCUT;
 	}
 
 	@Override
@@ -52,6 +51,11 @@ public class Sunflower extends Plant {
 	@Override
 	public int getCost() {
 		return COST;
+	}
+	
+	@Override
+	public int getCooldown() {
+		return this.cooldown;
 	}
 
 	@Override
@@ -75,19 +79,12 @@ public class Sunflower extends Plant {
 	}
 
 	@Override
-	public String getShortcut() {
-		return Messages.SUNFLOWER_NAME_SHORTCUT;
-	}
-
-	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		
 	}
 }

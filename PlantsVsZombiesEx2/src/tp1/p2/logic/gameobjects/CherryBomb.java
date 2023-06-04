@@ -37,11 +37,6 @@ public class CherryBomb extends Plant {
 	}
 	
 	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
-
-	@Override
 	public String getName() {
 		return Messages.CHERRY_BOMB_NAME;
 	}
@@ -60,6 +55,11 @@ public class CherryBomb extends Plant {
 	public int getCost() {
 		return COST;
 	}
+	
+	@Override
+	public int getCooldown() {
+		return this.cooldown;
+	}
 
 	@Override
 	public void update() {
@@ -73,18 +73,13 @@ public class CherryBomb extends Plant {
 		}
 	}
 
-
-
 	@Override
-	public void onEnter() {
-		// TODO Auto-generated method stub
+	public void onEnter() {		
 		
 	}
 
 	@Override
-	public void onExit() {
-		// TODO Auto-generated method stub
-		
+	public void onExit() {		
 		
 	}
 

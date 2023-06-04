@@ -17,12 +17,7 @@ public class WallNut extends Plant {
 	}
 	
 	public WallNut() {
-	}
-
-	@Override
-	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
-		return str ;
+		
 	}
 
 	@Override
@@ -30,16 +25,21 @@ public class WallNut extends Plant {
 		// TODO Auto-generated method stub
 		return new WallNut(game, col, row);
 	}
-
+	
 	@Override
-	public int getCooldown() {
-		// TODO Auto-generated method stub
-		return this.cooldown;
+	public String getDescription() {
+		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
+		return str ;
 	}
 
 	@Override
 	public String getName() {
 		return Messages.WALL_NUT_NAME;
+	}
+
+	@Override
+	public String getShortcut() {
+		return Messages.WALL_NUT_NAME_SHORTCUT;
 	}
 
 	@Override
@@ -51,30 +51,25 @@ public class WallNut extends Plant {
 	public int getCost() {
 		return COST;
 	}
-
+	
 	@Override
-	public boolean receivePlantAttack(int damage) {
-		return false;
+	public int getCooldown() {
+		// TODO Auto-generated method stub
+		return this.cooldown;
 	}
 
 	@Override
 	public void update() {
-	}
-
-	@Override
-	public String getShortcut() {
-		return Messages.WALL_NUT_NAME_SHORTCUT;
+		
 	}
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		
 	}
 }

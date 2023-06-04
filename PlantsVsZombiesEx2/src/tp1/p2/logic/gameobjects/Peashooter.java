@@ -9,18 +9,19 @@ public class Peashooter extends Plant {
 	public static final int COST = 50;
 	public static final int DMG = 1;
 	
-	protected final String name = Messages.PEASHOOTER_NAME;
-	protected final String symbol = Messages.PEASHOOTER_SYMBOL;
-	
-	
 	public Peashooter(GameWorld game, int col, int row) {
 		super(game, col, row, HP);
-		// TODO Auto-generated constructor stub
+		this.name = Messages.PEASHOOTER_NAME;
+		this.symbol = Messages.PEASHOOTER_SYMBOL;
 	}
 	
 	public Peashooter() {
-		// TODO Auto-generated constructor stub
-		this.hp = HP;
+
+	}
+
+	@Override
+	public Plant create(GameWorld game, int col, int row) {
+		return new Peashooter(game, col, row);
 	}
 
 	@Override
@@ -30,39 +31,28 @@ public class Peashooter extends Plant {
 	}
 
 	@Override
-	public Plant create(GameWorld game, int col, int row) {
-		// TODO Auto-generated method stub
-		return new Peashooter(game, col, row);
-	}
-
-	@Override
-	public int getCooldown() {
-		// TODO Auto-generated method stub
-		return this.cooldown;
-	}
-
-	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return this.name;
+		return Messages.PEASHOOTER_NAME;
+	}
+	
+	@Override
+	public String getShortcut() {
+		return Messages.PEASHOOTER_NAME_SHORTCUT;
 	}
 
 	@Override
 	public String getSymbol() {
-		// TODO Auto-generated method stub
-		return this.symbol;
+		return Messages.PEASHOOTER_SYMBOL;
 	}
 
 	@Override
 	public int getCost() {
-		// TODO Auto-generated method stub
-		return this.COST;
+		return COST;
 	}
 	
 	@Override
-	public boolean receivePlantAttack(int damage) {
-		// TODO Auto-generated method stub
-		return false;
+	public int getCooldown() {
+		return this.cooldown;
 	}
 
 	@Override
@@ -70,7 +60,7 @@ public class Peashooter extends Plant {
 		if(isAlive()) {
 			int i = this.col;
 			boolean terminado = false;
-			while(!terminado && i < game.NUM_COLS) {
+			while(!terminado && i < Game.NUM_COLS) {
 				if(game.attackZombie(i, this.row, DMG)) {
 					terminado = true;
 				}
@@ -79,21 +69,15 @@ public class Peashooter extends Plant {
 		}
 	}
 
-	@Override
-	public String getShortcut() {
-		// TODO Auto-generated method stub
-		return Messages.PEASHOOTER_NAME_SHORTCUT;
-	}
+
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		
 	}
 
