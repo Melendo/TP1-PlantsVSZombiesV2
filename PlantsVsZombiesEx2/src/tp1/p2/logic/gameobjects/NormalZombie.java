@@ -58,10 +58,10 @@ public class NormalZombie extends Zombie {
 			game.isFinished();
 		}
 		
-		else if(isAlive()) {
-			if(cooldown == 0) {
-				cooldown = SPEED;
-			}
+		if(cooldown == 1) {
+			cooldown = SPEED;
+		}
+		else {
 			cooldown--;
 			if(game.isPositionEmpty(col - 1, row) && cooldown == 0) {
 				col -= 1;
@@ -69,8 +69,9 @@ public class NormalZombie extends Zombie {
 			else if(!game.isPositionEmpty(col-1, row) ){
 				game.attackPlant(col-1, row, DMG);	
 			}
-			
 		}
+			
+		
 		
 	}
 

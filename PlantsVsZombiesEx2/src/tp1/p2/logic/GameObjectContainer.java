@@ -49,7 +49,6 @@ public class GameObjectContainer {
 	}
 
 	public void update() {
-		// Can't use for-each loop (for(GameObject g : gameObjexts)) without errors.
 		for(int i = 0; i < gameObjects.size(); i++) {
 			GameObject g = gameObjects.get(i);
 			if(g.isAlive()) {
@@ -59,18 +58,14 @@ public class GameObjectContainer {
 	}
 
 	public boolean isFullyOccupied(int col, int row) {
-		int i=0;
-		boolean fullyOcuppied = false;
-		
-		while (i<gameObjects.size() && !fullyOcuppied) {
-			GameObject g = gameObjects.get(i);
-			if (g.isAlive() && g.isInPosition(col, row)) {
-				fullyOcuppied = g.fillPosition();
+	
+		for(GameObject go : gameObjects) {
+			if (go.isAlive() && go.isInPosition(col, row) && go.isEntity()) {
+				return true;
 			}
-			i++;
 		}
 
-		return fullyOcuppied;
+		return false;
 	}
 
 	public boolean zombieArrived() {

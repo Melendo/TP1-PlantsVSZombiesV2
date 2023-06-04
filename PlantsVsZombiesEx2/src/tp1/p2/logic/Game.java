@@ -211,15 +211,13 @@ public class Game implements GameStatus, GameWorld {
 	//Return the Gen Suns
 	@Override
 	public int getGeneratedSuns() {
-		// TODO Auto-generated method stub
-		return 0;
+		return sunsManager.getGeneratedSuns();
 	}
 
 	//Return Caught Suns
 	@Override
 	public int getCaughtSuns() {
-		// TODO Auto-generated method stub
-		return 0;
+		return sunsManager.getCatchedSuns();
 	}
 
 	//Executes a specific command given
@@ -236,7 +234,7 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public boolean canBuy(Plant plant) {
 		if(this.suncoins>plant.getCost()) {
-			this.suncoins -= plant.getCost();
+			subtractSuncoins(plant.getCost());
 			return true;
 		}
 		return false;
@@ -277,6 +275,12 @@ public class Game implements GameStatus, GameWorld {
 	@Override
 	public void genSun() {
 		sunsManager.addSun();
+	}
+	
+	@Override
+	public boolean hasPositionEntity(int col, int row) {
+		
+		return container.isFullyOccupied(col, row);
 	}
 	
 	

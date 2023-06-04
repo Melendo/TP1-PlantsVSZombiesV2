@@ -42,6 +42,8 @@ public interface GameWorld {
 	public boolean attackZombie(int i, int row, int dmg);
 
 	public void genSun();
+	
+	public boolean hasPositionEntity(int col, int row);
 
 
 		
