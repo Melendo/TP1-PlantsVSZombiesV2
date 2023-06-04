@@ -82,7 +82,7 @@ public class ExplosiveZombie extends Zombie {
 	public void onExit() {
 		// TODO Auto-generated method stub
 		System.out.println("KABOOOM");
-		GameAction explosion = new ExplosionAction(col, row, DMG, false);
+		GameAction explosion = new ExplosionAction(col, row, 3, false);
         explosion.execute(game);
 	}
 	
