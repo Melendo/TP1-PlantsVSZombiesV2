@@ -34,24 +34,26 @@ public class AddPlantCheatCommand extends Command implements Cloneable{
 		this.plantName = plantName;
 	}
 
+	
+	
 	@Override
 	protected String getName() {
-		return Messages.COMMAND_ADD_NAME;
+		return Messages.COMMAND_CHEAT_PLANT_NAME;
 	}
 
 	@Override
 	protected String getShortcut() {
-		return Messages.COMMAND_ADD_SHORTCUT;
+		return Messages.COMMAND_CHEAT_PLANT_SHORTCUT;
 	}
 
 	@Override
 	public String getDetails() {
-		return Messages.COMMAND_ADD_DETAILS;
+		return Messages.COMMAND_CHEAT_PLANT_DETAILS;
 	}
 
 	@Override
 	public String getHelp() {
-		return Messages.COMMAND_ADD_HELP;
+		return Messages.COMMAND_CHEAT_PLANT_HELP;
 	}
 
 

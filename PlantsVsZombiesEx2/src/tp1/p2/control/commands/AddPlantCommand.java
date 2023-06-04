@@ -39,27 +39,28 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	protected String getName() {
-		return Messages.COMMAND_CHEAT_PLANT_NAME;
+		return Messages.COMMAND_ADD_NAME;
 	}
 
 	@Override
 	protected String getShortcut() {
-		return Messages.COMMAND_CHEAT_PLANT_SHORTCUT;
+		return Messages.COMMAND_ADD_SHORTCUT;
 	}
 
 	@Override
 	public String getDetails() {
-		return Messages.COMMAND_CHEAT_PLANT_DETAILS;
+		return Messages.COMMAND_ADD_DETAILS;
 	}
 
 	@Override
 	public String getHelp() {
-		return Messages.COMMAND_CHEAT_PLANT_HELP;
+		return Messages.COMMAND_ADD_HELP;
 	}
 
 
 	@Override
 	public boolean execute(GameWorld game) throws GameException {
+		System.out.println("Attempting to spawn plant " + this.plantName);
 		if(!game.isFullyOcuppied(col, row)) { 
 			if(game.canBuy(PlantFactory.spawnPlant(plantName, game, col, row))) {
 				game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
@@ -118,7 +119,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 			      }
 			      }
 			      catch(NumberFormatException e) {
-			        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));//rompe cuando no metes uno se los parametros
+			        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));
 			      }
 			} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT);
 		} else throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
