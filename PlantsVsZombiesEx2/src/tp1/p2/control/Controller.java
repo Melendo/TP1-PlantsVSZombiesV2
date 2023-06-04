@@ -6,6 +6,7 @@ import static tp1.p2.view.Messages.error;
 import java.util.Scanner;
 
 import tp1.p2.exceptions.GameException;
+import tp1.p2.exceptions.RecordException;
 import tp1.p2.logic.Game;
 import tp1.p2.view.GamePrinter;
 import tp1.p2.view.Messages;
@@ -53,7 +54,7 @@ public class Controller {
 	 * Runs the game logic.
 	 * @throws GameException 
 	 */
-	public void run() throws GameException {
+	public void run() throws RecordException {
 		boolean refreshDisplay = true;
 
 		while (!game.isFinished() && !game.isPlayerQuits()) {
