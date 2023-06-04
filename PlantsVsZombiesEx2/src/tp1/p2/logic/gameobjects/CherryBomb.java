@@ -32,7 +32,7 @@ public class CherryBomb extends Plant {
 
 	@Override
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, this.name,  COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, Messages.CHERRY_BOMB_NAME, COST, DMG, HP);
 		return str ;
 	}
 	
