@@ -18,25 +18,9 @@ import tp1.p2.view.Messages;
 
 public class CatchCommand extends Command implements Cloneable{
 
-	private static boolean sun = false;
-
 	private int col;
 
 	private int row;
-
-	public CatchCommand() {
-		sun = false;
-	}
-	
-	@Override
-	protected void newCycleStarted() {
-		sun = false;
-	}
-
-	private CatchCommand(int col, int row) {
-		this.col = col;
-		this.row = row;
-	}
 
 	@Override
 	protected String getName() {
@@ -60,18 +44,15 @@ public class CatchCommand extends Command implements Cloneable{
 
 	@Override
 	public boolean execute(GameWorld game) throws GameException{
-		// TODO add your code here
-		if(sun != true) {	
+			
 			if(game.tryToCatchObject(col, row)) {
-				sun = true;
+				game.update();
 				return true;
 			}
 			else {
 				throw new NotCatchablePositionException(Messages.NO_CATCHABLE_IN_POSITION.formatted(col, row));
 			}
-		}	
-		
-		return false;
+			
 		
 	}
 
