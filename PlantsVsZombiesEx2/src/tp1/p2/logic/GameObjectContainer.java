@@ -40,6 +40,7 @@ public class GameObjectContainer {
 	public boolean removeDead() {
 		for(int i = 0; i < gameObjects.size(); i++) {
 			if(!this.gameObjects.get(i).isAlive()) {
+				this.gameObjects.get(i).onExit();
 				this.gameObjects.remove(i);
 				return true;
 			}

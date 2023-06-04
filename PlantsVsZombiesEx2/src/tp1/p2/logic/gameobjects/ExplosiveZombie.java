@@ -69,10 +69,6 @@ public class ExplosiveZombie extends Zombie {
             }
 
         }
-        if(hp == 0) {
-            GameAction explosion = new ExplosionAction(col, row, DMG, false);
-            explosion.execute(game);
-        }
 		
 	}
 
@@ -85,7 +81,9 @@ public class ExplosiveZombie extends Zombie {
 	@Override
 	public void onExit() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("KABOOOM");
+		GameAction explosion = new ExplosionAction(col, row, DMG, false);
+        explosion.execute(game);
 	}
 	
 	
