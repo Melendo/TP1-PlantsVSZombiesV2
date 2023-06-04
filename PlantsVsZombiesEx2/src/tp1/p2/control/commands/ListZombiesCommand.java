@@ -36,10 +36,8 @@ public class ListZombiesCommand extends Command {
 	public boolean execute(GameWorld game){
 		System.out.println(Messages.AVAILABLE_ZOMBIES);
 		List<Zombie>  zombieList = (List<Zombie>) ZombieFactory.getAvailableZombies();
-		for(int i = 0; i< zombieList.size(); i++) {
-			//Hacer descripciones con el nombre incluido
-			System.out.print(zombieList.get(i).getName() + ": ");
-			System.out.println(zombieList.get(i).getDescription());
+		for(Zombie z: zombieList) {
+			System.out.println(z.getDescription());
 		}
 		System.out.println();
 
