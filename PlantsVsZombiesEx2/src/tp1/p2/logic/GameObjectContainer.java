@@ -140,4 +140,15 @@ public class GameObjectContainer {
 		}
 		return false;
 	}
+
+	public boolean isPosSun(int col, int row) {
+		for(GameObject go : gameObjects) {
+			if(go.isAlive() && go.isInPosition(col, row)){
+				if(!go.isEntity()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }

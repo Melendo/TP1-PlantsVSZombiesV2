@@ -187,12 +187,16 @@ public class Game implements GameStatus, GameWorld {
 			}
 		}
 		else {
-			if(isPositionEmpty(gameObject.getCol(), gameObject.getRow())) {
+			if(!isPosSun(gameObject.getCol(), gameObject.getRow())) {
 				container.add(gameObject);
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public boolean isPosSun(int col, int row) {
+		return container.isPosSun(col, row);
 	}
 	
 	//Returns number of cycle
