@@ -232,6 +232,13 @@ public class Messages {
 	public static final String COMMAND_SHOW_RECORD_DETAILS = "Rec[o]rd";
 
 	public static final String COMMAND_SHOW_RECORD_HELP = "show record of the current level";
+	
+	public static final String RECORD_READ_ERROR = "archivo corrupto";
+	
+	public static final String RECORD_FILENAME = "record.txt";
+	
+	public static final String RECORD_WRITE_ERROR= "error al escribir";
+
 
 	/**
 	 * Formats an debug message.
