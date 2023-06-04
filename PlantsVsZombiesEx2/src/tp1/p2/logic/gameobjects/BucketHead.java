@@ -59,16 +59,10 @@ public class BucketHead extends Zombie {
 				cooldown = SPEED;
 			}
 			cooldown--;
-			if(game.isFullyOcuppied(col - 1, row)){
-				System.out.println("FullyOcupied");
-			}
-			else {
-				System.out.println("NotFullyOcupied");
-			}
-			if(game.isPositionEmpty(col - 1, row) && cooldown == 0) {
+			if(!game.isFullyOcuppied(col - 1, row) && cooldown == 0) {
 				col -= 1;
 			}
-			else if(!game.isPositionEmpty(col-1, row) ){
+			else if(game.isFullyOcuppied(col-1, row) ){
 				game.attackPlant(col-1, row, DMG);	
 			}
 			

@@ -31,7 +31,7 @@ public abstract class Plant extends GameObject{
 	
 	@Override
 	public boolean isEntity() {
-		return false;
+		return true;
 	}
 	
 	public abstract Plant create(GameWorld game, int col, int row);
