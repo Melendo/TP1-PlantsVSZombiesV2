@@ -1,6 +1,6 @@
 package tp1.p2.logic.gameobjects;
 
-import tp1.p2.logic.Game;
+
 import tp1.p2.logic.GameWorld;
 import tp1.p2.logic.SunsManager;
 import tp1.p2.view.Messages;
@@ -34,13 +34,11 @@ public class Sun extends GameObject {
 
 	@Override
 	public boolean receiveZombieAttack(int damage) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean receivePlantAttack(int damage) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -87,7 +85,6 @@ public class Sun extends GameObject {
 
 	@Override
 	public int getCooldown() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.cooldown;
 	}
 }

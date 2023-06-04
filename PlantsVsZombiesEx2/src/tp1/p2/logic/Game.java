@@ -61,7 +61,6 @@ public class Game implements GameStatus, GameWorld {
 	//Resets the game with the provided level and seed.
 	@Override
 	public void reset(Level level, long seed) {
-		// TODO add your code here
 		
 		this.level = level;
 		this.seed = seed;
@@ -172,8 +171,7 @@ public class Game implements GameStatus, GameWorld {
 	//Try to catch
 	@Override
 	public boolean tryToCatchObject(int col, int row) {
-		// TODO Auto-generated method stub
-		return false;
+		return container.tryToCatchObject(col, row);
 	}
 
 	//Ads an Item to the game

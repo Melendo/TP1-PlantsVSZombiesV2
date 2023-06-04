@@ -116,5 +116,6 @@ public class Zombie extends GameObject {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 
 }

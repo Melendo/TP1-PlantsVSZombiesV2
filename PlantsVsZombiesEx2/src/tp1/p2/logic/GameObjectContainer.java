@@ -133,4 +133,15 @@ public class GameObjectContainer {
 		}
 		return res;
 	}
+
+	public boolean tryToCatchObject(int col, int row) {
+		for(GameObject go : gameObjects) {
+			if(go.isAlive() && go.isInPosition(col, row)){
+				if(go.catchObject()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }

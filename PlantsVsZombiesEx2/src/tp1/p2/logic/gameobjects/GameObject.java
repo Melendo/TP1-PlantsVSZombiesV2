@@ -92,8 +92,5 @@ public abstract class GameObject implements GameItem {
 	
 	abstract public void onExit();
 	
-	public boolean catchObject() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	abstract public boolean catchObject();
 }
