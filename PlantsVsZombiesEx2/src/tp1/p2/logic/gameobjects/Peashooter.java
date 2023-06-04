@@ -54,7 +54,7 @@ public class Peashooter extends Plant {
 	public void update() {
 		if(this.isAlive()) {
 			int i = this.col;
-			while(!game.attackZombie(i, this.row, DMG) && i < Game.NUM_COLS) {
+			while(!game.attackZombie(i, this.row, DMG) && i < Game.NUM_COLS - 1) {
 				i++;
 			}
 		}

@@ -187,8 +187,10 @@ public class Game implements GameStatus, GameWorld {
 			}
 		}
 		else {
-			container.add(gameObject);
-			return true;
+			if(isPositionEmpty(gameObject.getCol(), gameObject.getRow())) {
+				container.add(gameObject);
+				return true;
+			}
 		}
 		return false;
 	}
