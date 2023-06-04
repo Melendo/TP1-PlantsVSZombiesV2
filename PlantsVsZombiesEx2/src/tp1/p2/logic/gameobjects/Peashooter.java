@@ -26,7 +26,7 @@ public class Peashooter extends Plant {
 
 	@Override
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, Messages.PEASHOOTER_NAME, COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, Messages.PEASHOOTER_NAME_SHORTCUT, COST, DMG, HP);
 		return str ;
 	}
 

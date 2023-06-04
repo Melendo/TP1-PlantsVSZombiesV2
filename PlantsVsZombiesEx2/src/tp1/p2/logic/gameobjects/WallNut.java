@@ -28,7 +28,7 @@ public class WallNut extends Plant {
 	
 	@Override
 	public String getDescription() {
-		String str = String.format(Messages.PLANT_DESCRIPTION, Messages.WALL_NUT_NAME, COST, DMG, HP);
+		String str = String.format(Messages.PLANT_DESCRIPTION, Messages.WALL_NUT_NAME_SHORTCUT, COST, DMG, HP);
 		return str ;
 	}
 
