@@ -36,7 +36,7 @@ public abstract class Command {
 		new NoneCommand(),
 		new ListZombiesCommand(),
 		new AddZombieCommand(),
-		//new AddPlantCheatCommand(),
+		new AddPlantCheatCommand(),
 		new CatchCommand()
 		
 	);

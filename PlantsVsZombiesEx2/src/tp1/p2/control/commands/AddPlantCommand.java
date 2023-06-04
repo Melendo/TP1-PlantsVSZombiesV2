@@ -125,41 +125,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 		return command;
 	}
-	
-	/*
-	@Override
-	  public Command create(String[] parameters) throws GameException{
-	    // TODO add your code here
-	    Command command = null;
-	    plantName = parameters[1];
-	    if(!PlantFactory.isValidPlant(plantName)) {
-	      throw new CommandParseException((Messages.INVALID_GAME_OBJECT));
-	    }
-	    if(parameters.length == 4) {
-	      try {
-	        if(Integer.parseInt(parameters[2]) >= 0  && Integer.parseInt(parameters[3]) >= 0) {
-	          try {
-	            col = Integer.parseInt(parameters[2]);
-	            row = Integer.parseInt(parameters[3]);
-	            command = (AddPlantCommand) clone();
-	          }  catch(CloneNotSupportedException e) {
-	            e.printStackTrace();
-	          }
-	        }
-	     
-	      else{
-	        throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
-	      }
-	      }
-	      catch(NumberFormatException e) {
-	        throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[2], parameters[3], e)));//rompe cuando no metes uno se los parametros
-	      }
-	  }
-	    else throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
-	    return command;
-	}
-	
-	*/
+
 }
 
 
