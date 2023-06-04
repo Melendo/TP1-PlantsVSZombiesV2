@@ -39,7 +39,9 @@ public interface GameWorld {
 
 	public boolean attackPlant(int i, int row, int dmg);
 
-	boolean attackZombie(int i, int row, int dmg);
+	public boolean attackZombie(int i, int row, int dmg);
+
+	public void genSun();
 
 
 		

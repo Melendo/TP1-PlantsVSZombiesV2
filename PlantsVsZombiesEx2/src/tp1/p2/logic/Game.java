@@ -271,6 +271,11 @@ public class Game implements GameStatus, GameWorld {
 		return this.container.attackZombie(i, row, dmg);
 	}
 	
+	@Override
+	public void genSun() {
+		sunsManager.addSun();
+	}
+	
 	
 	
 	
