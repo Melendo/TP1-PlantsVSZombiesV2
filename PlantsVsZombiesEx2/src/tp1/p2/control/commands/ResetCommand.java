@@ -52,7 +52,7 @@ public class ResetCommand extends Command {
 
 	@Override
 	public Command create(String[] parameters) {
-		return null;
+		return this;
 		// TODO add your code here
 	}
 
