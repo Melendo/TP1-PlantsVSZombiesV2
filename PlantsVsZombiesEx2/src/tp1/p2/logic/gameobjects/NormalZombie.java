@@ -38,11 +38,6 @@ public class NormalZombie extends Zombie {
 	}
 
 	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
-
-	@Override
 	public String getSymbol() {
 		return Messages.ZOMBIE_SYMBOL;
 	}

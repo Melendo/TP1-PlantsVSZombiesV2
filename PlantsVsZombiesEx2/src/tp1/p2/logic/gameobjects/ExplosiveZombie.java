@@ -43,11 +43,6 @@ public class ExplosiveZombie extends Zombie {
 	public String getName() {
 		return Messages.EXPLOSIVE_ZOMBIE_NAME;
 	}
-	
-	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
 
 	@Override
 	public void update() {

@@ -51,12 +51,6 @@ public class WallNut extends Plant {
 	public int getCost() {
 		return COST;
 	}
-	
-	@Override
-	public int getCooldown() {
-		// TODO Auto-generated method stub
-		return this.cooldown;
-	}
 
 	@Override
 	public void update() {

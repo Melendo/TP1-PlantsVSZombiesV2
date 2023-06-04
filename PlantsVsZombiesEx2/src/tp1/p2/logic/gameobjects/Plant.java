@@ -38,9 +38,9 @@ public abstract class Plant extends GameObject{
 	
 	public abstract String getName();
 	
-	public abstract String getSymbol();
-	
 	public abstract String getShortcut();
+	
+	public abstract String getSymbol();
 	
 	public abstract int getCost();
 	

@@ -53,10 +53,6 @@ public class Sunflower extends Plant {
 		return COST;
 	}
 	
-	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
 
 	@Override
 	public boolean receivePlantAttack(int damage) {

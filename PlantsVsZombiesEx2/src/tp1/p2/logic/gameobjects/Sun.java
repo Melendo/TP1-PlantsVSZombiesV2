@@ -73,8 +73,4 @@ public class Sun extends GameObject {
 		return false;
 	}
 
-	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
 }

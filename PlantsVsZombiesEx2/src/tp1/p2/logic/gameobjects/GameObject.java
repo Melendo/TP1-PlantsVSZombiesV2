@@ -81,14 +81,10 @@ public abstract class GameObject implements GameItem {
 	protected abstract String getSymbol();
 
 	public abstract String getDescription();
-	
-	public abstract int getCooldown();
 
 	abstract public void update();
 	
 	abstract public void onEnter();
 	
 	abstract public void onExit();
-	
-	abstract public boolean catchObject();
 }

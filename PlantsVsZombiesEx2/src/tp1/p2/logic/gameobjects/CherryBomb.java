@@ -55,11 +55,6 @@ public class CherryBomb extends Plant {
 	public int getCost() {
 		return COST;
 	}
-	
-	@Override
-	public int getCooldown() {
-		return this.cooldown;
-	}
 
 	@Override
 	public void update() {
