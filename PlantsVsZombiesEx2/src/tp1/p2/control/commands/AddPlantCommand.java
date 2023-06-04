@@ -73,7 +73,6 @@ public class AddPlantCommand extends Command implements Cloneable {
 			throw new CommandParseException(Messages.INVALID_POSITION);
 		}
 		return true;
-		// TODO add your code here
 	}
 	
 	@Override
