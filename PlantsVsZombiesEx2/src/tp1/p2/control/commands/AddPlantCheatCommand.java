@@ -59,7 +59,7 @@ public class AddPlantCheatCommand extends Command implements Cloneable{
 
 	@Override
 	public boolean execute(GameWorld game) throws GameException {
-		if(!game.isFullyOcuppied(col, row)) { 
+		if(!game.hasPositionEntity(col, row)) { 
 			
 				game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));
 				game.update();

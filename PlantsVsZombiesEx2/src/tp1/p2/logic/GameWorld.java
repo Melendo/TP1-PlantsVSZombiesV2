@@ -21,9 +21,6 @@ public interface GameWorld {
 	//Executes the game actions and update the game objects in the board.
 	void update();
 
-	//Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
-	boolean isFullyOcuppied(int col, int row);
-	
 	//Returns true if the player has enough coins to buy the plant in the argument
 	public boolean canBuy(Plant plant);
 		

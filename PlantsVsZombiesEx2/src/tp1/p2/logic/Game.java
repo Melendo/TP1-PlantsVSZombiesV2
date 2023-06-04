@@ -123,12 +123,6 @@ public class Game implements GameStatus, GameWorld {
 		return this.actions.size() > 0;
 	}
 
-	// Checks if a cell is fully occupied, that is, the position can be shared between an NPC (Plant, Zombie) and Suns .
-	@Override
-	public boolean isFullyOcuppied(int col, int row) {
-		return this.container.isFullyOccupied(col, row);
-	}
-
 	@Override
 	//Return if player quited the game
 	public boolean isPlayerQuits() {
@@ -180,7 +174,7 @@ public class Game implements GameStatus, GameWorld {
 	//Ads an Item to the game
 	@Override
 	public boolean addItem(GameObject gameObject) {
-		if(isPositionEmpty(gameObject.getCol(), gameObject.getRow())) {
+		if(!hasPositionEntity(gameObject.getCol(), gameObject.getRow())) {
 			container.add(gameObject);
 			return true;
 		}
@@ -282,7 +276,6 @@ public class Game implements GameStatus, GameWorld {
 	
 	@Override
 	public boolean hasPositionEntity(int col, int row) {
-		
 		return container.isFullyOccupied(col, row);
 	}
 
@@ -295,6 +288,7 @@ public class Game implements GameStatus, GameWorld {
 	public void increaseScore(int i) {
 		this.score += i;
 	}
+
 
 	
 	

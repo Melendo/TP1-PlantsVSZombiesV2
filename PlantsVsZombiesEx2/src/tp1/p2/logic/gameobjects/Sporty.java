@@ -63,10 +63,10 @@ public class Sporty extends Zombie {
 				cooldown = SPEED;
 			}
 			cooldown--;
-			if(!game.isFullyOcuppied(col - 1, row) && cooldown == 0) {
+			if(!game.hasPositionEntity(col - 1, row) && cooldown == 0) {
 				col -= 1;
 			}
-			else if(game.isFullyOcuppied(col-1, row) ){
+			else if(game.hasPositionEntity(col-1, row) ){
 				game.attackPlant(col-1, row, DMG);	
 			}
 			

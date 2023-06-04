@@ -77,7 +77,6 @@ public interface GameStatus {
 	 * @return <code>true</code> if the cell is fully occupied, <code>false</code>
 	 *         otherwise.
 	 */
-	boolean isFullyOcuppied(int col, int row);
 	
 	void subtractSuncoins(int x);
 
@@ -92,6 +91,8 @@ public interface GameStatus {
 	public boolean getPlayerWin();
 
 	public int getScore();
+	
+	public boolean hasPositionEntity(int col, int row);
 
 
 }
