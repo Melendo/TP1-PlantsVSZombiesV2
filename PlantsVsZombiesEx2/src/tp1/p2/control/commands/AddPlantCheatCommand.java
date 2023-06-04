@@ -68,29 +68,8 @@ public class AddPlantCheatCommand extends Command implements Cloneable{
 			throw new CommandParseException(Messages.INVALID_POSITION);
 		}
 		return true;
-		// TODO add your code here
 	}
 
-	
-	/*
-	@Override
-	public Command create(String[] parameters) throws GameException {
-		Command command = null;
-		if(PlantFactory.isValidPlant(parameters[1])) {
-			if(Integer.parseInt(parameters[2]) >= 0 && Integer.parseInt(parameters[3]) >= 0) {
-				try {
-						command = (AddZombieCommand) clone();
-				} catch (CloneNotSupportedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-			} else throw new CommandParseException(Messages.INVALID_POSITION);
-		} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT + parameters[1]);
-		// TODO add your code here
-		return command;
-	}
-	*/
 	
 	@Override
 	public Command create(String[] parameters) throws GameException {
