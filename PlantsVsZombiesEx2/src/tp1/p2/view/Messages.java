@@ -224,6 +224,14 @@ public class Messages {
 	public static final String NO_CATCHABLE_IN_POSITION = "No sun in (%d, %d)";
 
 	public static final String SUN_ALREADY_CAUGHT = "Sun already caught";
+	
+	public static final String COMMAND_SHOW_RECORD_NAME = "Record";
+
+	public static final String COMMAND_SHOW_RECORD_SHORTCUT = "o";
+
+	public static final String COMMAND_SHOW_RECORD_DETAILS = "Rec[o]rd";
+
+	public static final String COMMAND_SHOW_RECORD_HELP = "show record of the current level";
 
 	/**
 	 * Formats an debug message.
