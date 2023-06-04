@@ -80,20 +80,26 @@ public class CatchCommand extends Command implements Cloneable{
 	public Command create(String[] parameters) throws GameException{
 		// TODO add your code here
 		Command command = null;
-		if(parameters.length == 3) {
-			if(Integer.parseInt(parameters[1]) >= 0  && Integer.parseInt(parameters[2]) >= 0) {
-				try {
-					col = Integer.parseInt(parameters[1]);
-					row = Integer.parseInt(parameters[2]);
-					command = (CatchCommand) clone();
-				}catch(CloneNotSupportedException e) {
-					e.printStackTrace();
-				}
-				catch(NumberFormatException e) {
-			        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));
-			    }
-			} else throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2])));
-		}else throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
+		try {
+			if(parameters.length == 3) {
+				if(Integer.parseInt(parameters[1]) >= 0  && Integer.parseInt(parameters[2]) >= 0) {
+					try {
+						col = Integer.parseInt(parameters[1]);
+						row = Integer.parseInt(parameters[2]);
+						command = (CatchCommand) clone();
+					}catch(CloneNotSupportedException e) {
+						e.printStackTrace();
+					}
+					catch(NumberFormatException e) {
+				        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));
+				    }
+				} else throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2])));
+			}
+			else throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
+		}
+		catch(NumberFormatException e) {
+			throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2], e)));
+		}
 		return command;
 	}
 	
