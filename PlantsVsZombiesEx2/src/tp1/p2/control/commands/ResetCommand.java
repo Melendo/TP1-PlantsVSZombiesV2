@@ -33,15 +33,12 @@ public class ResetCommand extends Command {
 	@Override
 	public boolean execute(GameWorld game){
 		game.reset();
-		game.update();
 		return true;
-		// TODO add your code here
 	}
 
 	@Override
 	public Command create(String[] parameters) {
 		return this;
-		// TODO add your code here
 	}
 
 }
