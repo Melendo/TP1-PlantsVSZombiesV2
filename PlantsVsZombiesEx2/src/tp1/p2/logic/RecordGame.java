@@ -2,6 +2,7 @@ package tp1.p2.logic;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
@@ -27,7 +28,7 @@ public class RecordGame {
 	public void readFile() throws CommandParseException{
 		try {
     		String s = "";
-	    	BufferedReader readFile = new BufferedReader(new FileReader("records.txt"));
+	    	BufferedReader readFile = new BufferedReader(new FileReader("C:\\Users\\Robert\\Documents\\GitHub\\PlantsVSZombiesV2-1\\PlantsVsZombiesEx2\\records.txt"));
 	    	while ((s = readFile.readLine()) != null && cont < level.length) {
 				String[] parts = s.split(":", 2);
 				level[cont]=parts[0];
@@ -61,17 +62,10 @@ public class RecordGame {
             }
         }
 	}
-
-	public void  newLevelRecord(String levelName) {
-        level[cont] = levelName;
-        score[cont] = 0;
-        cont++;
-    }
-	
 	
 	public void save() throws RecordException {
 		try {
-        	writeFile = new BufferedWriter(new FileWriter("records.txt"));
+        	writeFile = new BufferedWriter(new FileWriter("C:\\Users\\Robert\\Documents\\GitHub\\PlantsVSZombiesV2-1\\PlantsVsZombiesEx2\\\\records.txt", false));
         	for (int i = 0; i < cont; i++) {
         		writeFile.write(level[i] + ":" + score[i] + "\n");
         	}

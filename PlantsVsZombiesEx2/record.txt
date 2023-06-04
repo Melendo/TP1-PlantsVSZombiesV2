@@ -1,3 +1,0 @@
-EASY:0
-HARD:0
-INSANE:0

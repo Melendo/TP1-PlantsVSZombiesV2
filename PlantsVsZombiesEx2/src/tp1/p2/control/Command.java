@@ -15,6 +15,7 @@ import tp1.p2.control.commands.HelpCommand;
 import tp1.p2.control.commands.ListPlantsCommand;
 import tp1.p2.control.commands.ListZombiesCommand;
 import tp1.p2.control.commands.NoneCommand;
+import tp1.p2.control.commands.RecordCommand;
 import tp1.p2.control.commands.ResetCommand;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
@@ -37,7 +38,8 @@ public abstract class Command {
 		new ListZombiesCommand(),
 		new AddZombieCommand(),
 		new AddPlantCheatCommand(),
-		new CatchCommand()
+		new CatchCommand(),
+		new RecordCommand()
 		
 	);
 	/* @formatter:on */

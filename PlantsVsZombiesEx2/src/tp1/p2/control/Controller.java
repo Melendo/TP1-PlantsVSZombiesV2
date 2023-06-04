@@ -5,6 +5,7 @@ import static tp1.p2.view.Messages.error;
 
 import java.util.Scanner;
 
+import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.exceptions.RecordException;
 import tp1.p2.logic.Game;
@@ -54,8 +55,10 @@ public class Controller {
 	 * Runs the game logic.
 	 * @throws GameException 
 	 */
-	public void run() throws RecordException {
+	public void run() throws CommandParseException {
 		boolean refreshDisplay = true;
+		
+		game.readRecord();
 
 		while (!game.isFinished() && !game.isPlayerQuits()) {
 
@@ -86,6 +89,10 @@ public class Controller {
 
 		if (refreshDisplay) {
 			printGame();
+		}
+		if(game.isNewRecord()) {
+			System.out.println("new record");
+			game.saveRecord();
 		}
 
 		printEndMessage();

@@ -107,10 +107,8 @@ public class Game implements GameStatus, GameWorld {
 		}
 		
 		
-		if(record.getScoreRecord(level.name()) == -1) {
-			record.newLevelRecord(level.name());
-		}
-		else if(record.getScoreRecord(level.name()) < getScore() && isFinished()) {
+		if(record.getScoreRecord(level.name()) < getScore() && isFinished()) {
+			System.out.println("SAVING NEW RECORD");
 			record.setScoreRecord(level.name(), getScore());
 			newRecord = true;
 		}	
@@ -323,8 +321,14 @@ public class Game implements GameStatus, GameWorld {
 		return newRecord;
 	}
 	
+	
+	
 	public void saveRecord() throws RecordException{
 		record.save();
+	}
+	
+	public void readRecord() throws CommandParseException{
+		record.readFile();
 	}
 	
 	@Override
