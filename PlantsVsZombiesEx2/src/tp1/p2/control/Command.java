@@ -45,11 +45,14 @@ public abstract class Command {
 
 	public static Command parse(String[] commandWords) throws GameException {
 		if (commandWords.length == 1 && commandWords[0].isEmpty()) {
+			
 			return defaultCommand.create(commandWords);
 		}
 
 		for (Command command : AVAILABLE_COMMANDS) {
+			System.out.println("Comprobando " + command.getName());
 			if (command.matchCommand(commandWords[0])) {
+				System.out.println("El comando introducido es: " + command.getName());
 				return command.create(commandWords);
 			}
 		}
