@@ -63,6 +63,12 @@ public class NormalZombie extends Zombie {
 		}
 		else {
 			cooldown--;
+			if(game.isFullyOcuppied(col - 1, row)){
+				System.out.println("FullyOcupied");
+			}
+			else {
+				System.out.println("NotFullyOcupied");
+			}
 			if(game.isPositionEmpty(col - 1, row) && cooldown == 0) {
 				col -= 1;
 			}
