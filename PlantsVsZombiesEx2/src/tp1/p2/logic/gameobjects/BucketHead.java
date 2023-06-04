@@ -27,13 +27,8 @@ public class BucketHead extends Zombie {
 	}
 
 	@Override
-	public String getSymbol() {
-		return Messages.BUCKET_HEAD_ZOMBIE_SYMBOL;
-	}
-
-	@Override
 	public String getDescription() {
-		String str = String.format(Messages.ZOMBIE_DESCRIPTION, SPEED, DMG, HP);
+		String str = String.format(Messages.ZOMBIE_DESCRIPTION, Messages.BUCKET_HEAD_ZOMBIE_NAME, SPEED, DMG, HP);
 		return str ;
 	}
 
@@ -41,6 +36,12 @@ public class BucketHead extends Zombie {
 	public String getName() {
 		return Messages.BUCKET_HEAD_ZOMBIE_NAME;
 	}
+	
+	@Override
+	public String getSymbol() {
+		return Messages.BUCKET_HEAD_ZOMBIE_SYMBOL;
+	}
+
 
 	@Override
 	public void update() {
@@ -67,13 +68,11 @@ public class BucketHead extends Zombie {
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		game.increaseScore(10);
 		
 	}

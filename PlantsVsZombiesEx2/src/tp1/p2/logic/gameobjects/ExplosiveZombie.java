@@ -29,19 +29,19 @@ public class ExplosiveZombie extends Zombie {
 	}
 
 	@Override
-	public String getSymbol() {
-		return Messages.EXPLOSIVE_ZOMBIE_SYMBOL;
-	}
-
-	@Override
 	public String getDescription() {
-		String str = String.format(Messages.ZOMBIE_DESCRIPTION, SPEED, DMG, HP);
+		String str = String.format(Messages.ZOMBIE_DESCRIPTION, Messages.EXPLOSIVE_ZOMBIE_NAME, SPEED, DMG, HP);
 		return str ;
 	}
 
 	@Override
 	public String getName() {
 		return Messages.EXPLOSIVE_ZOMBIE_NAME;
+	}
+	
+	@Override
+	public String getSymbol() {
+		return Messages.EXPLOSIVE_ZOMBIE_SYMBOL;
 	}
 
 	@Override
@@ -70,13 +70,11 @@ public class ExplosiveZombie extends Zombie {
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		System.out.println("KABOOOM");
 		GameAction explosion = new ExplosionAction(col, row, 3, false);
         explosion.execute(game);

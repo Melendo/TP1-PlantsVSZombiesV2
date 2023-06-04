@@ -10,7 +10,6 @@ public class NormalZombie extends Zombie {
 	public static final int DMG = 1;
 	public static final int SPEED= 2;
 	
-	//Zombie Builder
 	public NormalZombie(GameWorld game, int row) {
 		super(game,Game.NUM_COLS + 1, row, HP);
 		this.name = Messages.ZOMBIE_NAME;
@@ -19,12 +18,10 @@ public class NormalZombie extends Zombie {
 		
 	}
 	
-	//Empty Zombie Builder
 	public NormalZombie() {
 		
 	}
 	
-	//Creates a new zombie
 	@Override
 	public Zombie create(GameWorld game, int row) {
 		System.out.println("Creado ZNormal");
@@ -33,8 +30,13 @@ public class NormalZombie extends Zombie {
 	
 	@Override
 	public String getDescription() {
-		String str = String.format(Messages.ZOMBIE_DESCRIPTION, SPEED, DMG, HP);
+		String str = String.format(Messages.ZOMBIE_DESCRIPTION, Messages.ZOMBIE_NAME, SPEED, DMG, HP);
 		return str ;
+	}
+	
+	@Override
+	public String getName() {
+		return Messages.ZOMBIE_NAME;
 	}
 
 	@Override
@@ -42,10 +44,6 @@ public class NormalZombie extends Zombie {
 		return Messages.ZOMBIE_SYMBOL;
 	}
 	
-	public String getName() {
-		return Messages.ZOMBIE_NAME;
-	}
-
 	@Override
 	public void update() {
 		
@@ -73,13 +71,11 @@ public class NormalZombie extends Zombie {
 
 	@Override
 	public void onEnter() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
 		game.increaseScore(10);
 		
 	}
