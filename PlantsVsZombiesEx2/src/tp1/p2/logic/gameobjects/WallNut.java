@@ -31,7 +31,7 @@ public class WallNut extends Plant {
 	@Override
 	public Plant create(GameWorld game, int col, int row) {
 		// TODO Auto-generated method stub
-		return new Peashooter(game, col, row);
+		return new WallNut(game, col, row);
 	}
 
 	@Override

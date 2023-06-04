@@ -118,7 +118,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 			      }
 			      }
 			      catch(NumberFormatException e) {
-			        throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[2], parameters[3], e)));//rompe cuando no metes uno se los parametros
+			        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));//rompe cuando no metes uno se los parametros
 			      }
 			} else throw new CommandParseException(Messages.INVALID_GAME_OBJECT);
 		} else throw new CommandParseException(Messages.COMMAND_PARAMETERS_MISSING);
