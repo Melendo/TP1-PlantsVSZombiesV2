@@ -1,6 +1,8 @@
 package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.GameWorld;
+import tp1.p2.logic.actions.ExplosionAction;
+import tp1.p2.logic.actions.GameAction;
 import tp1.p2.view.Messages;
 
 public class ExplosiveZombie extends Zombie {
@@ -20,6 +22,31 @@ public class ExplosiveZombie extends Zombie {
 	@Override
 	public Zombie create(GameWorld game, int row) {
 		return new ExplosiveZombie(game, row);
+	}
+	
+	@Override
+	public void update() {
+		if(this.col == -1) {
+			game.isFinished();
+		}
+		
+		else if(isAlive()) {
+			if(shouldMove == 0) {
+				shouldMove = SPEED;
+			}
+			shouldMove--;
+			if(game.isPositionEmpty(col - 1, row) && shouldMove == 0) {
+				col -= 1;
+			}
+			else if(!game.isPositionEmpty(col-1, row) ){
+				game.attackPlant(col-1, row, DMG);	
+			}
+			
+		}
+		if(hp == 0) {
+			GameAction explosion = new ExplosionAction(col, row, DMG, false);
+			explosion.execute(game);
+		}
 	}
 	
 }

@@ -7,6 +7,8 @@ public class Sporty extends Zombie {
 	private String symbol = Messages.SPORTY_ZOMBIE_SYMBOL;
 	private String name = Messages.SPORTY_ZOMBIE_NAME;
 	private String description = Messages.ZOMBIE_DESCRIPTION;
+	public static final int SPEED = 1;
+	public static final int HP = 2;
 	
 	public Sporty(GameWorld game, int row) {
 		// TODO Auto-generated constructor stub

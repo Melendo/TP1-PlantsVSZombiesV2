@@ -9,7 +9,7 @@ public class Zombie extends GameObject {
 	public static final int HP = 5;
 	public static final int DMG = 1;
 	public static final int SPEED= 2;
-	private int shouldMove;
+	protected int shouldMove;
 	private String symbol = Messages.ZOMBIE_SYMBOL;
 	private String name = Messages.ZOMBIE_NAME;
 	private String description = Messages.ZOMBIE_DESCRIPTION;
