@@ -180,7 +180,13 @@ public class Game implements GameStatus, GameWorld {
 	//Ads an Item to the game
 	@Override
 	public boolean addItem(GameObject gameObject) {
-		if(!hasPositionEntity(gameObject.getCol(), gameObject.getRow())) {
+		if(gameObject.isEntity()) {
+			if(!hasPositionEntity(gameObject.getCol(), gameObject.getRow())) {
+			container.add(gameObject);
+			return true;
+			}
+		}
+		else {
 			container.add(gameObject);
 			return true;
 		}
