@@ -37,7 +37,6 @@ public class HelpCommand extends Command {
 			// TODO add your code here
 			buffer.append(Messages.LINE_SEPARATOR);
 			buffer.append(command.getDetails() + ": " + command.getHelp());
-			buffer.append(Messages.LINE_SEPARATOR);
 			/* @formatter:on */
 		}
 
@@ -48,7 +47,6 @@ public class HelpCommand extends Command {
 	
 	@Override
 	public Command create(String[] parameters){
-		// TODO Auto-generated method stub
 		return this;
 	}
 

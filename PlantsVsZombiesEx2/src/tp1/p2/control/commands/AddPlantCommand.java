@@ -60,7 +60,7 @@ public class AddPlantCommand extends Command implements Cloneable {
 
 	@Override
 	public boolean execute(GameWorld game) throws GameException {
-		System.out.println("Attempting to spawn plant " + this.plantName);
+		
 		if(!game.hasPositionEntity(col, row)) { 
 			if(game.canBuy(PlantFactory.spawnPlant(plantName, game, col, row))) {
 				game.addItem(PlantFactory.spawnPlant(plantName, game, col, row));

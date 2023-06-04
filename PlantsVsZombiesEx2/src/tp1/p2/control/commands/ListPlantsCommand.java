@@ -39,7 +39,7 @@ public class ListPlantsCommand extends Command {
 
 		System.out.println();
 
-		return true;
+		return false;
 	}
 	
 	@Override

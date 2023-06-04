@@ -17,14 +17,11 @@ public class PlantFactory {
 	);
 	/* @formatter:on */
 
-	public static boolean isValidPlant(String plantName) { //da siempre falso por alguna razon
+	public static boolean isValidPlant(String plantName) {
 		for (Plant p : AVAILABLE_PLANTS) {
-			if(p.getName().equalsIgnoreCase(plantName) || p.getSymbol().equalsIgnoreCase(plantName)) { //era porque el == no iba por algun motivo
-				//System.out.println(p.getShortcut() + " SI es la planta seleccionada");
+			if(p.getName().equalsIgnoreCase(plantName) || p.getSymbol().equalsIgnoreCase(plantName)) {
 				return true;			
-			} else {
-				//System.out.println(p.getSymbol() + " No es la planta seleccionada");
-			}
+			} 
 		}
 
 		return false;
@@ -32,7 +29,6 @@ public class PlantFactory {
 
 	public static Plant spawnPlant(String plantName, GameWorld game, int col, int row) {
 		for (Plant p : AVAILABLE_PLANTS) {
-			// TODO add your code here
 			
 			if(p.getName().equalsIgnoreCase(plantName) || p.getSymbol().equalsIgnoreCase(plantName)) {
 				return p.create(game, col, row);

@@ -61,12 +61,6 @@ public class ZombiesManager {
 		boolean canAdd = getRemainingZombies() > 0 && shouldAddZombie() && isPositionEmpty(GameWorld.NUM_COLS, row);
 		int zombieType = randomZombieType();
 
-		if(canAdd) {System.out.println("CanAdd zombie");
-		}
-		else {
-			System.out.println("CantAdd zombie");
-		}
-		
 		if (canAdd) {
 			Zombie z = null;
 			try {
