@@ -26,8 +26,8 @@ public class Sporty extends Zombie {
 	//Creates a new zombie
 	@Override
 	public Zombie create(GameWorld game, int row) {
-		System.out.println("Creado ZNormal");
-		return new NormalZombie(game, row);
+		System.out.println("Creado Sporty");
+		return new Sporty(game, row);
 	}
 	
 	@Override

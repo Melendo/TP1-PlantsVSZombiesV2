@@ -24,8 +24,8 @@ public class ExplosiveZombie extends Zombie {
 
 	@Override
 	public Zombie create(GameWorld game, int row) {
-		System.out.println("Creado ZBucket");
-		return new BucketHead(game, row);
+		System.out.println("Creado Explosive");
+		return new ExplosiveZombie(game, row);
 	}
 
 	@Override
