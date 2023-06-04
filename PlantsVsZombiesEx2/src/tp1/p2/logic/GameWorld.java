@@ -10,7 +10,7 @@ public interface GameWorld {
 	public static final int NUM_COLS = 8;
 
 	//AddsSun
-	void addSun();
+	void addSun(int numSol);
 
 	//Object catch
 	boolean tryToCatchObject(int col, int row);

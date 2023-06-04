@@ -2,6 +2,7 @@ package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.Game;
 import tp1.p2.logic.GameWorld;
+import tp1.p2.logic.SunsManager;
 import tp1.p2.view.Messages;
 
 public class Sun extends GameObject {
@@ -15,8 +16,10 @@ public class Sun extends GameObject {
 
 	@Override
 	public boolean catchObject() {
-		return false;
-		// TODO add your code here
+		this.hp = 0;
+		this.game.addSun(10);
+		//SunsManager.setCatchedSuns(SunsManager.getCatchedSuns()+1);
+		return true;
 	}
 
 	@Override
@@ -38,25 +41,26 @@ public class Sun extends GameObject {
 
 	@Override
 	public boolean isAlive() {
-		// TODO Auto-generated method stub
-		return false;
+		return (this.hp>0);
 	}
 
 	@Override
 	protected String getSymbol() {
-		// TODO Auto-generated method stub
-		return null;
+		return Messages.SUN_SYMBOL;
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return Messages.SUN_DESCRIPTION;
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		this.cooldown--;
+		if(cooldown == 0) {
+			this.hp = 0;
+			onExit();
+		}
 		
 	}
 
@@ -68,7 +72,7 @@ public class Sun extends GameObject {
 
 	@Override
 	public void onExit() {
-		// TODO Auto-generated method stub
+		//SunsManager.setGeneratedSuns(SunsManager.getGeneratedSuns()-1);
 		
 	}
 	

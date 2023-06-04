@@ -165,8 +165,8 @@ public class Game implements GameStatus, GameWorld {
 
 	//Adds Sun
 	@Override
-	public void addSun() {
-		// TODO Auto-generated method stub
+	public void addSun(int numSol) {
+		this.suncoins += numSol;
 	}
 
 	//Try to catch
