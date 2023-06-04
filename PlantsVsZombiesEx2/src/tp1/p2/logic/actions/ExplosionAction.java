@@ -21,24 +21,26 @@ public class ExplosionAction implements GameAction {
 
 	@Override
 	public void execute(GameWorld game) {
+		
 		if(cherry) {
-			game.attackZombie(damage, row, col - 1);
-			game.attackZombie(damage, row + 1, col - 1);
-			game.attackZombie(damage, row + 1, col);
-			game.attackZombie(damage, row + 1, col + 1);
-			game.attackZombie(damage, row, col + 1);
-			game.attackZombie(damage, row - 1, col + 1);
-			game.attackZombie(damage, row - 1, col);
-			game.attackZombie(damage, row - 1, col - 1);
+			game.attackZombie(col - 1, row, damage);
+			game.attackZombie(col - 1, row + 1, damage);
+			game.attackZombie(col, row + 1, damage);
+			game.attackZombie(col + 1, row + 1, damage);
+			game.attackZombie(col + 1, row, damage);
+			game.attackZombie(col + 1, row - 1, damage);
+			game.attackZombie(col, row - 1, damage);
+			game.attackZombie(col - 1, row - 1, damage);
 		} else {
-			game.attackPlant(damage, row, col - 1);
-			game.attackPlant(damage, row + 1, col - 1);
-			game.attackPlant(damage, row + 1, col);
-			game.attackPlant(damage, row + 1, col + 1);
-			game.attackPlant(damage, row, col + 1);
-			game.attackPlant(damage, row - 1, col + 1);
-			game.attackPlant(damage, row - 1, col);
-			game.attackPlant(damage, row - 1, col - 1);
+			game.attackPlant(col - 1, row, damage);
+			game.attackPlant(col - 1, row + 1, damage);
+			game.attackPlant(col, row + 1, damage);
+			game.attackPlant(col + 1, row + 1, damage);
+			game.attackPlant(col + 1, row, damage);
+			game.attackPlant(col + 1, row - 1, damage);
+			game.attackPlant(col, row - 1, damage);
+			game.attackPlant(col - 1, row - 1, damage);
+			
 		}
 
 	}
