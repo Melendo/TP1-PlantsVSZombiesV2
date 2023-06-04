@@ -30,6 +30,7 @@ public class CherryBomb extends Plant {
 		return new CherryBomb(game, col, row);
 	}
 
+	@Override
 	public String getDescription() {
 		String str = String.format(Messages.PLANT_DESCRIPTION, this.name,  COST, DMG, HP);
 		return str ;

@@ -23,6 +23,7 @@ public class Sunflower extends Plant {
 		
 	}
 
+	@Override
 	public String getDescription() {
 		String str = String.format(Messages.PLANT_DESCRIPTION, this.name, COST, DMG, HP);
 		return str ;
