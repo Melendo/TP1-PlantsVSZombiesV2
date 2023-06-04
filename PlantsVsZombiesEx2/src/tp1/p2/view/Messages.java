@@ -133,6 +133,9 @@ public class Messages {
 	public static final String SUN_SYMBOL = "*";
 
 	public static final String SUN_DESCRIPTION = "Sun";
+	
+	public static final String HEALTH_BAR = "[%02d]";
+
 
 	//
 	// User actions

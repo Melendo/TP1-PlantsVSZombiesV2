@@ -12,7 +12,6 @@ public class Sun extends GameObject {
 	//Builder
 	public Sun(GameWorld game, int x, int y) {
 		super(game, x, y, HP);
-		this.hp = HP;
 		this.symbol = getSymbol();
 	}
 

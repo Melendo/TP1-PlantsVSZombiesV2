@@ -2,6 +2,7 @@ package tp1.p2.logic.gameobjects;
 
 import tp1.p2.logic.GameItem;
 import tp1.p2.logic.GameWorld;
+import tp1.p2.view.Messages;
 
 /**
  * Base class for game non playable character in the game.
@@ -71,7 +72,7 @@ public abstract class GameObject implements GameItem {
 	public String toString() {
 		if (isAlive()) {
 			// TODO add your code here
-			String string = this.getSymbol() + "[" + this.hp + "]";
+			String string = this.getSymbol() + String.format(Messages.HEALTH_BAR , getHp());
 			return string;
 		} else {
 			return "";

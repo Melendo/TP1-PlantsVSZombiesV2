@@ -15,7 +15,7 @@ public class Sunflower extends Plant {
 		super(game, col, row, HP);
 		this.name = Messages.SUNFLOWER_NAME;
 		this.symbol = Messages.SUNFLOWER_SYMBOL;
-		this.cooldown = CYCLES;
+		this.cooldown = CYCLES + 1;
 	}
 	
 	public Sunflower() {
