@@ -1,14 +1,18 @@
 package tp1.p2.control.commands;
 
+import java.util.List;
+
 import tp1.p2.control.Command;
 import tp1.p2.control.ExecutionResult;
+import tp1.p2.exceptions.GameException;
 import tp1.p2.logic.GameWorld;
 import tp1.p2.logic.gameobjects.Plant;
 import tp1.p2.logic.gameobjects.PlantFactory;
 import tp1.p2.view.Messages;
 
 public class ListPlantsCommand extends Command {
-
+	
+	
 	@Override
 	protected String getName() {
 		return Messages.COMMAND_LIST_NAME;
@@ -27,9 +31,12 @@ public class ListPlantsCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(GameWorld game) {
+	public boolean execute(GameWorld game) throws GameException{
 		System.out.println(Messages.AVAILABLE_PLANTS);
-		// TODO add your code here
+		for(Plant p: PlantFactory.getAvailablePlants()) {
+			System.out.println(p.getName());
+			System.out.println(p.getDescription());
+		}
 
 		System.out.println();
 

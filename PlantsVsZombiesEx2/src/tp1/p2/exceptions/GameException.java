@@ -1,10 +1,6 @@
 package tp1.p2.exceptions;
 
 public class GameException extends Exception {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	 public GameException(String text) {
