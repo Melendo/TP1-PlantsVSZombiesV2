@@ -17,19 +17,19 @@ import tp1.p2.view.Messages;
 
 public class CatchCommand extends Command implements Cloneable{
 
-	private static boolean caughtSunThisCycle = false;
+	private static boolean sun = false;
 
 	private int col;
 
 	private int row;
 
 	public CatchCommand() {
-		caughtSunThisCycle = false;
+		sun = false;
 	}
 	
 	@Override
 	protected void newCycleStarted() {
-		caughtSunThisCycle = false;
+		sun = false;
 	}
 
 	private CatchCommand(int col, int row) {
@@ -60,31 +60,26 @@ public class CatchCommand extends Command implements Cloneable{
 	@Override
 	public boolean execute(GameWorld game) throws GameException{
 		// TODO add your code here
-		if(caughtSunThisCycle != true) {
-			if(game.isPositionEmpty(col,row)) {
-				throw new NotCatchablePositionException(Messages.NO_CATCHABLE_IN_POSITION.formatted(col, row));
+		if(sun != true) {	
+			if(game.tryToCatchObject(col, row)) {
+				sun = true;
+				return true;
 			}
 			else {
-				if(game.tryToCatchObject(col, row)) {
-					caughtSunThisCycle = true;
-					return true;
-				}
-				else {
-					throw new NotCatchablePositionException(Messages.NO_CATCHABLE_IN_POSITION.formatted(col, row));
-				}
+				throw new NotCatchablePositionException(Messages.NO_CATCHABLE_IN_POSITION.formatted(col, row));
 			}
-		}
-		else {
-			throw new CommandExecuteException(Messages.SUN_ALREADY_CAUGHT);
-		}
+		}	
+		
+		return false;
+		
 	}
 
 	@Override
 	public Command create(String[] parameters) throws GameException{
 		// TODO add your code here
 		Command command = null;
-		try {
-			if(parameters.length ==  3 && Integer.parseInt(parameters[1]) >= 0  && Integer.parseInt(parameters[2]) >= 0) {
+		if(parameters.length == 3) {
+			if(Integer.parseInt(parameters[1]) >= 0  && Integer.parseInt(parameters[2]) >= 0) {
 				try {
 					col = Integer.parseInt(parameters[1]);
 					row = Integer.parseInt(parameters[2]);
@@ -92,13 +87,8 @@ public class CatchCommand extends Command implements Cloneable{
 				}catch(CloneNotSupportedException e) {
 					e.printStackTrace();
 				}
-			}
-			else {
-				throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
-			}
-		}catch(NumberFormatException e) {
-			throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2], e)));
-		}
+			} else throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2])));
+		}else throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
 		return command;
 	}
 
