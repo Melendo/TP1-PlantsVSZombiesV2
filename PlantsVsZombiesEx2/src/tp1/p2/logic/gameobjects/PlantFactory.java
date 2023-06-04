@@ -20,10 +20,10 @@ public class PlantFactory {
 	public static boolean isValidPlant(String plantName) { //da siempre falso por alguna razon
 		for (Plant p : AVAILABLE_PLANTS) {
 			if(p.getName().equalsIgnoreCase(plantName) || p.getSymbol().equalsIgnoreCase(plantName)) { //era porque el == no iba por algun motivo
-				System.out.println(p.getShortcut() + " SI es la planta seleccionada");
+				//System.out.println(p.getShortcut() + " SI es la planta seleccionada");
 				return true;			
 			} else {
-				System.out.println(p.getSymbol() + " No es la planta seleccionada");
+				//System.out.println(p.getSymbol() + " No es la planta seleccionada");
 			}
 		}
 

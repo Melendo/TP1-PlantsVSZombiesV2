@@ -9,6 +9,7 @@ import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
 import tp1.p2.exceptions.NotCatchablePositionException;
 import tp1.p2.logic.GameWorld;
+import tp1.p2.logic.gameobjects.PlantFactory;
 import tp1.p2.view.Messages;
 
 
@@ -74,6 +75,7 @@ public class CatchCommand extends Command implements Cloneable{
 		
 	}
 
+	
 	@Override
 	public Command create(String[] parameters) throws GameException{
 		// TODO add your code here
@@ -87,9 +89,12 @@ public class CatchCommand extends Command implements Cloneable{
 				}catch(CloneNotSupportedException e) {
 					e.printStackTrace();
 				}
+				catch(NumberFormatException e) {
+			        throw new CommandParseException((String.format(Messages.INVALID_POSITION, parameters[2], parameters[3], e)));
+			    }
 			} else throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2])));
 		}else throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
 		return command;
 	}
-
+	
 }
