@@ -10,10 +10,10 @@ public class Sporty extends Zombie {
 	public static final int SPEED= 1;
 	
 	public Sporty(GameWorld game, int row) {
-		super(game,Game.NUM_COLS + 1, row, HP);
+		super(game,Game.NUM_COLS , row, HP);
 		this.name = Messages.SPORTY_ZOMBIE_NAME;
 		this.symbol = Messages.SPORTY_ZOMBIE_SYMBOL;
-		this.cooldown = SPEED;
+		this.cooldown = SPEED + 1;
 		
 	}
 	
@@ -23,7 +23,6 @@ public class Sporty extends Zombie {
 	
 	@Override
 	public Zombie create(GameWorld game, int row) {
-		System.out.println("Creado Sporty");
 		return new Sporty(game, row);
 	}
 	

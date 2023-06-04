@@ -10,10 +10,10 @@ public class BucketHead extends Zombie {
 	public static final int SPEED= 2;
 	
 	public BucketHead(GameWorld game, int row) {
-		super(game,Game.NUM_COLS + 1, row, HP);
+		super(game,Game.NUM_COLS , row, HP);
 		this.name = Messages.BUCKET_HEAD_ZOMBIE_NAME;
 		this.symbol = Messages.BUCKET_HEAD_ZOMBIE_SYMBOL;
-		this.cooldown = SPEED;
+		this.cooldown = SPEED + 1;
 	}
 	
 	public BucketHead() {
@@ -22,7 +22,6 @@ public class BucketHead extends Zombie {
 
 	@Override
 	public Zombie create(GameWorld game, int row) {
-		System.out.println("Creado ZBucket");
 		return new BucketHead(game, row);
 	}
 

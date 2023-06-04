@@ -50,13 +50,12 @@ public class AddZombieCommand extends Command implements Cloneable {
 	}
 
 	@Override
-	public boolean execute(GameWorld game) throws GameException { //Ya compruebo en create si el zombie es valido
+	public boolean execute(GameWorld game) throws GameException { 
 		if(!game.hasPositionEntity(col, row)) {
 			game.addItem(ZombieFactory.spawnZombie(zombieIdx, game, col, row));
 			game.update();
 		} else throw new CommandParseException(Messages.INVALID_POSITION);
 		return true;
-		// TODO add your code here
 	}
 
 	@Override
@@ -68,7 +67,6 @@ public class AddZombieCommand extends Command implements Cloneable {
 					try {
 						command = (AddZombieCommand) clone();
 					} catch (CloneNotSupportedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else throw new CommandParseException(Messages.INVALID_POSITION);
