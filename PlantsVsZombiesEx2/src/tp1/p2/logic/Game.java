@@ -6,7 +6,9 @@ import java.util.Random;
 
 import tp1.p2.control.Command;
 import tp1.p2.control.Level;
+import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.exceptions.GameException;
+import tp1.p2.exceptions.RecordException;
 import tp1.p2.logic.actions.GameAction;
 import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.logic.gameobjects.Plant;
@@ -41,7 +43,9 @@ public class Game implements GameStatus, GameWorld {
 	
 	private int score;
 	
-	//private RecordGame record;
+	private RecordGame record;
+	
+	private boolean newRecord = false;
 
 	//Constructor
 	public Game(long seed, Level level) {
@@ -49,7 +53,7 @@ public class Game implements GameStatus, GameWorld {
 		this.level = level;
 		this.container = new GameObjectContainer();
 		reset();
-		//record = new RecordGame(this);
+		record = new RecordGame();
 	}
 
 	//Resets the game.
@@ -105,6 +109,14 @@ public class Game implements GameStatus, GameWorld {
 
 		// 6. Notify commands that a new cycle started
 		Command.newCycle();
+		
+		if(record.getScoreRecord(level.name()) == -1) {
+			record.newLevelRecord(level.name());
+		}
+		else if(record.getScoreRecord(level.name()) < getScore() && isFinished()) {
+			record.setScoreRecord(level.name(), getScore());
+			newRecord = true;
+		}	
 
 	}
 
@@ -154,14 +166,6 @@ public class Game implements GameStatus, GameWorld {
 		else {
 			resul = isPlayerQuits();
 		}
-		/*if(resul) {
-			if(record.getRecord(level.toString()) < score) {
-				System.out.println("NEW RECORD");
-				record.newRecord(level.toString(), score);
-			} else {
-				System.out.println("GG");
-			}
-		}*/
 		return resul;
 	}
 
@@ -306,15 +310,26 @@ public class Game implements GameStatus, GameWorld {
 	public void increaseScore(int i) {
 		this.score += i;
 	}
-
-
+	
+	public String getRecord() throws CommandParseException {
+		// TODO Auto-generated method stub
+		//r.readFile();
+		if(record.getScoreRecord(level.name()) == -1){
+			return level.name() + " record is " + 0;
+		}
+		else {
+			return level.name() + " record is " + record.getScoreRecord(level.name());
+		}
+	}
+	
+	public boolean isNewRecord() {
+		return newRecord;
+	}
+	
+	public void saveRecord() throws RecordException{
+		record.save();
+	}
 	
 	
-	
-	
-	
-	
-	
-
 
 }

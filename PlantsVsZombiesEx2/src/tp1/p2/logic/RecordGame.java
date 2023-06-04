@@ -10,63 +10,77 @@ import tp1.p2.exceptions.RecordException;
 import tp1.p2.view.Messages;
 
 public class RecordGame {
+
 	private String level[];
+	private int score[];
 	private int cont;
 	BufferedWriter writeFile;
-	private GameStatus game;
-	int score[];
+	private static final String FILE_MSG = "Archivo corrupto";
 	
-	public RecordGame(GameStatus game) {
+	public RecordGame() {
 		level = new String[3];
 		score = new int[3];
 		cont = 0;
-		this.game = game;
 	}
+
 	
 	public void readFile() throws CommandParseException{
 		try {
-    		String aux = "";
-	    	BufferedReader readFile = new BufferedReader(new FileReader("record.txt"));
-	    	while ((aux = readFile.readLine()) != null && cont < level.length) {
-				String[] line = aux.split(":", 2);
-				level[cont] = line[0];
-                score[cont] = Integer.parseInt(line[1]);
+    		String s = "";
+	    	BufferedReader readFile = new BufferedReader(new FileReader("records.txt"));
+	    	while ((s = readFile.readLine()) != null && cont < level.length) {
+				String[] parts = s.split(":", 2);
+				level[cont]=parts[0];
+                score[cont]=Integer.parseInt(parts[1]);
                 cont++;
 	    	}
 			readFile.close();
     		
 		} catch (Exception e) {
-			throw new RecordException("record.txt no existe");
+			throw new RecordException(FILE_MSG);
 		}	
 
 	}
 	
-	public int getRecord (String level) {
-		for(int i = 0; i < score.length; i++) {
-			if(this.level[i].equalsIgnoreCase(level)) {
-				return score[i];
-			}
-		}
-		return 0;
-	}
-	
-	public void newRecord(String level, int score) {
-		for(int i = 0; i < this.score.length; i++) {
-			if(this.level[i].equalsIgnoreCase(level)) {
-				this.score[i] = score;
-			}
-		}
+	public int getScoreRecord(String s) {
+        for (int i = 0; i < cont; i++) {
+            if(level[i].equalsIgnoreCase(s)) {
+                return score[i];
+            }
+        }
+        return -1;
     }
+	
+	public void setScoreRecord(String s, int r) {
+        for (int i = 0; i < cont; i++) {
+            if(level[i].equalsIgnoreCase(s)) {            	
+                if(score[i] < r) {
+                	score[i] = r;
+                }
+                break;
+            }
+        }
+	}
+
+	public void  newLevelRecord(String levelName) {
+        level[cont] = levelName;
+        score[cont] = 0;
+        cont++;
+    }
+	
 	
 	public void save() throws RecordException {
 		try {
-        	writeFile = new BufferedWriter(new FileWriter("record.txt"));
+        	writeFile = new BufferedWriter(new FileWriter("records.txt"));
         	for (int i = 0; i < cont; i++) {
         		writeFile.write(level[i] + ":" + score[i] + "\n");
         	}
 			writeFile.close();
 		} catch (Exception e) {
-			throw new RecordException("record.txt no existe");
+			throw new RecordException(FILE_MSG);
 		}
 	}
+	
+
 }
+

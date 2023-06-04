@@ -1,5 +1,6 @@
 package tp1.p2.logic;
 
+import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.logic.gameobjects.Plant;
 
@@ -43,6 +44,8 @@ public interface GameWorld {
 	public boolean hasPositionEntity(int col, int row);
 
 	void increaseScore(int i);
+
+	String getRecord() throws CommandParseException;
 
 
 		
