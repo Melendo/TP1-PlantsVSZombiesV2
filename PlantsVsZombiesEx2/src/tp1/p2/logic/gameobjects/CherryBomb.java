@@ -7,7 +7,7 @@ import tp1.p2.view.Messages;
 
 public class CherryBomb extends Plant {
 	private static final int COST = 50;
-	private static final int HP = 3;
+	private static final int HP = 2;
 	private static final int DMG = 10;
 	private static final int CYCLES = 3;
 	
