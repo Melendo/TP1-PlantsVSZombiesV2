@@ -10,53 +10,32 @@ public class ExplosionAction implements GameAction {
 
 	private int damage;
 	
-	private boolean cherry;
+	private boolean plant;
 
-	public ExplosionAction(int col, int row, int damage, boolean cherry) {
+	public ExplosionAction(int col, int row, int damage, boolean plant) {
 		this.col = col;
 		this.row = row;
 		this.damage = damage;
-		this.cherry = cherry;
+		this.plant = plant;
 	}
 
 	@Override
 	public void execute(GameWorld game) {
 		
-		if(cherry) {
-			if(game.attackZombie(col - 1, row, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col - 1, row + 1, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col, row + 1, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col + 1, row + 1, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col + 1, row, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col + 1, row - 1, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col, row - 1, damage)) {
-				game.increaseScore(10);
-			}
-			if(game.attackZombie(col - 1, row - 1, damage)) {
-				game.increaseScore(10);
+		if(plant) {
+			for(int i = this.col- 1; i <= this.col + 1; i++) {
+				for(int j = this.row -1; j <= this.row +1; j++) {
+					if(game.attackZombie( i, j, damage)) {
+						game.increaseScore(10);
+					}
+				}
 			}
 		} else {
-			game.attackPlant(col - 1, row, damage);
-			game.attackPlant(col - 1, row + 1, damage);
-			game.attackPlant(col, row + 1, damage);
-			game.attackPlant(col + 1, row + 1, damage);
-			game.attackPlant(col + 1, row, damage);
-			game.attackPlant(col + 1, row - 1, damage);
-			game.attackPlant(col, row - 1, damage);
-			game.attackPlant(col - 1, row - 1, damage);
-			
+			for(int i = this.col- 1; i <= this.col + 1; i++) {
+				for(int j = this.row -1; j <= this.row +1; j++) {
+					game.attackPlant( i, j, damage);
+				}
+			}
 		}
 
 	}

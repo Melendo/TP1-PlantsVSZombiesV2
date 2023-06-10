@@ -71,7 +71,6 @@ public abstract class GameObject implements GameItem {
 
 	public String toString() {
 		if (isAlive()) {
-			// TODO add your code here
 			String string = this.getSymbol() + String.format(Messages.HEALTH_BAR , getHp());
 			return string;
 		} else {
