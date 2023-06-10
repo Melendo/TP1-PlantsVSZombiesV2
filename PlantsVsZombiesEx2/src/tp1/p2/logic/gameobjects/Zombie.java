@@ -29,12 +29,7 @@ public abstract class Zombie extends GameObject {
 		return true;
 	}
 	
-	@Override
-	public boolean isZombie() {
-		return true;
-	}
-	
-	
+	public abstract boolean isEnemyDead();
 	
 	public abstract Zombie create(GameWorld game, int row);
 	

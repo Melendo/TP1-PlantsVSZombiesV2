@@ -75,5 +75,10 @@ public class Sporty extends Zombie {
 		
 	}
 	
+	@Override
+	public boolean isEnemyDead() {
+		return this.hp <= 0;
+	}
+	
 
 }

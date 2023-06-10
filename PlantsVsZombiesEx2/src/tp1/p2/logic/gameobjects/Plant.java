@@ -35,8 +35,8 @@ public abstract class Plant extends GameObject{
 	}
 	
 	@Override
-	public boolean isZombie() {
-		return false;
+	public boolean isEnemyDead() {
+		return true;
 	}
 	
 	public abstract Plant create(GameWorld game, int col, int row);

@@ -73,8 +73,8 @@ public class Sun extends GameObject {
 	}
 	
 	@Override
-	public boolean isZombie() {
-		return false;
+	public boolean isEnemyDead() {
+		return true;
 	}
 
 }

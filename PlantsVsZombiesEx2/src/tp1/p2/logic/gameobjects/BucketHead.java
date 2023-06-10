@@ -75,5 +75,9 @@ public class BucketHead extends Zombie {
 		game.increaseScore(10);
 		
 	}
+	@Override
+	public boolean isEnemyDead() {
+		return this.hp <= 0;
+	}
 	
 }

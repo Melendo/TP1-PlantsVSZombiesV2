@@ -79,8 +79,9 @@ public class GameObjectContainer {
 	}
 	
 	public boolean allZombiesDied() {
+		
 		for(GameObject go : gameObjects) {
-			if(go.isZombie() && go.isAlive()) {
+			if(!go.isEnemyDead()) {
 				return false;
 			}
 		}
