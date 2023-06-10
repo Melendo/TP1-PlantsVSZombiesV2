@@ -122,9 +122,9 @@ public class GameObjectContainer {
 	
 	public boolean attackZombie(int col, int row, int dmg) {
 		boolean res = false;
-		for(int i = 0; i < gameObjects.size(); i++) {
-			if(gameObjects.get(i).getCol() == col && gameObjects.get(i).getRow() == row) {
-				res = gameObjects.get(i).receivePlantAttack(dmg);
+		for(GameObject go : gameObjects) {
+			if(go.isAlive() && go.isInPosition(col, row)){
+				res = go.receivePlantAttack(dmg);	
 			}
 		}
 		return res;
