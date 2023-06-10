@@ -7,7 +7,6 @@ import tp1.p2.view.Messages;
 public class NoneCommand extends Command {
 
 	public NoneCommand() {
-		super(true);
 	}
 
 	@Override

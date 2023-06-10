@@ -57,7 +57,7 @@ public abstract class Command {
 				return command.create(commandWords);
 			}
 		}
-		System.out.println(error(Messages.UNKNOWN_COMMAND)); //se crashea al llegar a add plant cheat
+		System.out.println(error(Messages.UNKNOWN_COMMAND)); 
 		return null;
 	}
 
@@ -72,14 +72,8 @@ public abstract class Command {
 	}
 
 	public Command() {
-		this(false);
 	}
 
-	public Command(boolean isDefault) {
-		if (isDefault) {
-			// TODO add your code here
-		}
-	}
 
 	abstract protected String getName();
 

@@ -71,7 +71,9 @@ public class CatchCommand extends Command implements Cloneable{
 				    }
 				} else throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2])));
 			}
-			else throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
+			else {
+				throw new NumberFormatException((Messages.COMMAND_PARAMETERS_MISSING));
+				}
 		}
 		catch(NumberFormatException e) {
 			throw new CommandParseException((Messages.INVALID_POSITION.formatted(parameters[1], parameters[2], e)));
