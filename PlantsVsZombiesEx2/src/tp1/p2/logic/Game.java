@@ -185,7 +185,7 @@ public class Game implements GameStatus, GameWorld {
 			}
 		}
 		else {
-			if(!isPosSun(gameObject.getCol(), gameObject.getRow())) {
+			if(!isEntityInPos(gameObject.getCol(), gameObject.getRow())) {
 				container.add(gameObject);
 				return true;
 			}
@@ -193,8 +193,8 @@ public class Game implements GameStatus, GameWorld {
 		return false;
 	}
 	
-	public boolean isPosSun(int col, int row) {
-		return container.isPosSun(col, row);
+	public boolean isEntityInPos(int col, int row) {
+		return container.isEntityInPos(col, row);
 	}
 	
 	//Returns number of cycle
