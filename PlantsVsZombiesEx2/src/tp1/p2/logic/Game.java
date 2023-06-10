@@ -59,14 +59,12 @@ public class Game implements GameStatus, GameWorld {
 	//Resets the game.
 	@Override
 	public void reset() {
-		reset(this.level, this.seed);
+		this.reset(this.level, this.seed);
 	}
-
-	//Resets the game with the provided level and seed.
+	
 	@Override
-	public void reset(Level level, long seed) {
-		
-		this.level = level;
+	public void reset(Level lv, long seed) {
+		this.level = lv;
 		this.seed = seed;
 		this.random = new Random(seed);
 		this.cycle = 0;
@@ -77,6 +75,7 @@ public class Game implements GameStatus, GameWorld {
 		container = new GameObjectContainer();
 		sunsManager = new SunsManager(this, random);
 		score = 0;
+		
 	}
 
 	//Executes the game actions and update the game objects in the board.
@@ -335,6 +334,8 @@ public class Game implements GameStatus, GameWorld {
 	public boolean checkPlayerVictory() {
 		return zombiesManager.getRemainingZombies() == 0 && container.allZombiesDied();
 	}
+
+	
 	
 	
 

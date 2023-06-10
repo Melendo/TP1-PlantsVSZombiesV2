@@ -1,5 +1,6 @@
 package tp1.p2.logic;
 
+import tp1.p2.control.Level;
 import tp1.p2.exceptions.CommandParseException;
 import tp1.p2.logic.gameobjects.GameObject;
 import tp1.p2.logic.gameobjects.Plant;
@@ -30,6 +31,9 @@ public interface GameWorld {
 	
 	//Resests the game
 	public void reset();
+	
+	//Resests the game with params
+	public void reset(Level lv, long seed);
 
 	public boolean isPositionEmpty(int numCols, int row);
 
@@ -48,7 +52,6 @@ public interface GameWorld {
 	public String getRecord() throws CommandParseException;
 
 	public boolean checkPlayerVictory();
-	
 	
 
 

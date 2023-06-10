@@ -60,7 +60,6 @@ public interface GameStatus {
 	 * @param level {@link Level} Used to initialize the game.
 	 * @param seed Random seed Used to initialize the game.
 	 */
-	void reset(Level level, long seed);
 
 	/**
 	 * Executes the game actions and update the game objects in the board.
@@ -93,6 +92,8 @@ public interface GameStatus {
 	public int getScore();
 	
 	public boolean hasPositionEntity(int col, int row);
+	
+
 
 
 }

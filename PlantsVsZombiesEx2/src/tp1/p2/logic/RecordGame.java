@@ -17,7 +17,7 @@ public class RecordGame {
 	private int cont;
 	BufferedWriter writeFile;
 	public static final String FILE_MSG = "Archivo no se ha podido abrir";
-	public static final String RUTA_DATOS= "records.txt";
+	public static final String RUTA_DATOS= "C:\\Users\\nacho\\eclipse-workspace\\PlantsVSZombiesV2-1\\PlantsVsZombiesEx2\\records.txt";
 	
 	public RecordGame() {
 		level = new String[3];
